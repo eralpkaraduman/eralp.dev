@@ -7,17 +7,29 @@ module.exports = {
   ],
   // Customize your site metadata:
   siteMetadata: {
-    title: `My Blog Title`,
-    author: `My Name`,
-    description: `My site description...`,
+    title: `eralp.dev`,
+    author: `Eralp Karaduman`,
+    description: `Blog of Eralp Karaduman`,
     social: [
       {
         name: `twitter`,
-        url: `https://twitter.com/gatsbyjs`,
+        url: `https://twitter.com/eralpkaraduman`,
+      },
+      {
+        name: `instagram`,
+        url: `https://instagram.com/eralpkaraduman`,
       },
       {
         name: `github`,
-        url: `https://github.com/gatsbyjs`,
+        url: `https://github.com/eralpkaraduman`,
+      },
+      {
+        name: `linkedin`,
+        url: `https://linkedin.com/in/eralpkaraduman`,
+      },
+      {
+        name: `eralpkaraduman.com`,
+        url: `https:///eralpkaraduman.com`,
       },
     ],
   },
