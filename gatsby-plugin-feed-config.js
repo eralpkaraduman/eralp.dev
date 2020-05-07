@@ -1,6 +1,6 @@
 // Based on https://github.com/kentcdodds/kentcdodds.com/blob/4976c89de5dd4246807c0d7a1ad140d703bcc0b0/gatsby-config.js
 module.exports = {
-  title: `eralp.dev blog RSS feed`,
+  title: `eralp.dev`,
   output: "/rss.xml",
   query: `
      {
