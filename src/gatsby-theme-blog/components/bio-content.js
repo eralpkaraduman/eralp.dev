@@ -5,6 +5,6 @@ export default () => (
   <Fragment>
     Hi, here are my sketches, thoughts and experiments.
     <br />
-    Visit <Styled.a href="http://eralpkaraduman.com/">eralpkaraduman.com</Styled.a> to learn more about me.
+    Visit <Styled.a href="https://eralpkaraduman.com/">eralpkaraduman.com</Styled.a> to learn more about me.
   </Fragment>
 )

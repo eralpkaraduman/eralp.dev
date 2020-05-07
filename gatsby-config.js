@@ -15,24 +15,20 @@ module.exports = {
     description: `Blog of Eralp Karaduman`,
     social: [
       {
-        name: `twitter`,
+        name: `Twitter`,
         url: `https://twitter.com/eralpkaraduman`,
       },
       {
-        name: `instagram`,
+        name: `Instagram`,
         url: `https://instagram.com/eralpkaraduman`,
       },
       {
-        name: `github`,
+        name: `GitHub`,
         url: `https://github.com/eralpkaraduman`,
       },
       {
-        name: `linkedin`,
+        name: `LinkedIn`,
         url: `https://linkedin.com/in/eralpkaraduman`,
-      },
-      {
-        name: `eralpkaraduman.com`,
-        url: `https:///eralpkaraduman.com`,
       },
     ],
   },
