@@ -2,11 +2,7 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-theme-blog`,
-      options: {
-        mdxOtherwiseConfigured: true
-      },
-    },
-    `gatsby-plugin-mdx`
+    }
   ],
   // Customize your site metadata:
   siteMetadata: {
