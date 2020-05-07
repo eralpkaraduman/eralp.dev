@@ -15,19 +15,27 @@ module.exports = {
           authorHomePageTitle
         }
       }
-      allBlogPost {
+      allMdx(
+        limit: 1000,
+        filter: {frontmatter: {published: {ne: false}}
+        fileAbsolutePath: {regex: "//content//"}},
+        sort: {order: DESC, fields: [frontmatter___date]}) {
         edges {
           node {
             id
-            slug
-            excerpt
-            date
+            excerpt(pruneLength: 250)
+            html
+            frontmatter {
+              title
+              date
+              slug
+            }
           }
         }
       }
      }
    `,
-  serialize: ({ query: { allBlogPost, site } }) => {
+  serialize: ({ query: { allBlogPost, allMdx, site } }) => {
     const {
       siteUrl,
       title,
@@ -37,8 +45,9 @@ module.exports = {
       authorHomePageTitle,
     } = site.siteMetadata
     const stripSlash = slug => (slug.startsWith("/") ? slug.slice(1) : slug)
-    return allBlogPost.edges.map(edge => {
-      const url = `${siteUrl}/${stripSlash(edge.node.slug)}`
+    return allMdx.edges.map(edge => {
+      const { title, date, slug } = edge.node.frontmatter
+      const url = `${siteUrl}/${stripSlash(slug)}`
       const footer = `
           <div style="width: 100%; margin: 0 auto; max-width: 800px; padding: 40px 40px;">
             <div style="display: flex;">
@@ -68,6 +77,7 @@ module.exports = {
         description: edge.node.excerpt,
         date: edge.node.date,
         url,
+        title,
         guid: url,
         custom_elements: [
           {
