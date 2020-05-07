@@ -2,9 +2,8 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-theme-blog`,
-    }
+    },
   ],
-  // Customize your site metadata:
   siteMetadata: {
     title: `eralp.dev`,
     author: `Eralp Karaduman`,
