@@ -78,15 +78,22 @@ module.exports = {
         description: excerpt,
         date,
         url,
+        slug,
         title,
         guid: url,
         custom_elements: [
           {
-            "content:encoded": `<div style="width: 100%; margin: 0 auto; max-width: 800px; padding: 40px 40px;">
+            "content:encoded": `<div>
                 \${replacedHtml}
                 \${postText}
               </div>`,
           },
+          // {
+          //   "content:encoded": `<div style="width: 100%; margin: 0 auto; max-width: 800px; padding: 40px 40px;">
+          //       \${replacedHtml}
+          //       \${postText}
+          //     </div>`,
+          // },
         ],
       }
     })
