@@ -14,7 +14,7 @@ module.exports = {
     authorHomePage: "https://eralpkaraduman.com",
     authorHomePageTitle: "eralpkaraduman.com",
     authorBio:
-      "I'm Eralp Karaduman. I make apps, games and digital toys as a software engineer.",
+      "I'm Eralp Karaduman, a software engineer. I make apps, games and digital toys.",
     description: `Blog of Eralp Karaduman`,
     siteUrl: `https://eralp.dev`,
     social: [
