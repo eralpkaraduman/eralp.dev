@@ -54,7 +54,7 @@ module.exports = {
             <div style="display: flex;">
               <div style="padding-right: 20px;">
                 <img
-                  src="${siteUrl}/images/avatar.png"
+                  src="${siteUrl}/images/eralp.png"
                   alt="${author}"
                   style="max-width: 80px; border-radius: 50%;"
                 />
@@ -65,7 +65,10 @@ module.exports = {
           </div>
         `
 
-      const postText = `<div>${footer}</div><div style="margin-top=55px; font-style: italic;">(This article was posted to my blog at <a href="${siteUrl}">${siteUrl}</a>. You can <a href="${url}">read it online by clicking here</a>.)</div>`
+      const postText = `
+        <div>${footer}</div>
+        <div style="font-style: italic;">(This article was posted to my blog at <a href="${siteUrl}">${siteUrl}</a>. You can <a href="${url}">read it online by clicking here</a>.)</div>
+      `
 
       // Hacky workaround for https://github.com/gaearon/overreacted.io/issues/65
       const replacedHtml = (html || ``)
@@ -82,10 +85,13 @@ module.exports = {
         guid: url,
         custom_elements: [
           {
-            "content:encoded": `<div style="width: 100%; margin: 0 auto; max-width: 800px; padding: 40px 40px;">
-                ${replacedHtml}
-                ${postText}
-              </div>`,
+            "content:encoded": `
+              <div style="width: 100%; margin: 0 auto; max-width: 800px; padding: 40px 40px;">
+                ${html}
+                \${replacedHtml}
+                \${postText}
+              </div>
+            `,
           },
         ],
       }
