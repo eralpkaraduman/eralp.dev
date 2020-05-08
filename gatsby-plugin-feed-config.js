@@ -75,7 +75,7 @@ module.exports = {
                         <img
                           width="48"
                           height="48"
-                          src="${siteUrl}/images/eralp.png"
+                          src="${siteUrl}/images/icon_64.png"
                           alt="${author}"
                           style="max-width: 80px; border-radius: 50%;"
                         />
