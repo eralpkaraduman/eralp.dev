@@ -66,7 +66,7 @@ module.exports = {
         `
 
       const postText = `
-        <div>${footer}</div>
+        <div>\${footer}</div>
         <div style="font-style: italic;">(This article was posted to my blog at <a href="${siteUrl}">${siteUrl}</a>. You can <a href="${url}">read it online by clicking here</a>.)</div>
       `
 
@@ -88,7 +88,7 @@ module.exports = {
             "content:encoded": `
               <div style="width: 100%; margin: 0 auto; max-width: 800px; padding: 40px 40px;">
                 ${replacedHtml}
-                \${postText}
+                ${postText}
               </div>
             `,
           },
