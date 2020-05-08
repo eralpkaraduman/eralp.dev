@@ -46,7 +46,8 @@ module.exports = {
     } = site.siteMetadata
     const stripSlash = slug => (slug.startsWith("/") ? slug.slice(1) : slug)
     return allMdx.edges.map(edge => {
-      const { title, date, slug } = edge.node.frontmatter
+      const { id, excerpt, html, frontmatter } = edge.node
+      const { title, date, slug } = frontmatter
       const url = `${siteUrl}/${stripSlash(slug)}`
       const footer = `
           <div style="width: 100%; margin: 0 auto; max-width: 800px; padding: 40px 40px;">
@@ -67,22 +68,22 @@ module.exports = {
       const postText = `<div>${footer}</div><div style="margin-top=55px; font-style: italic;">(This article was posted to my blog at <a href="${siteUrl}">${siteUrl}</a>. You can <a href="${url}">read it online by clicking here</a>.)</div>`
 
       // Hacky workaround for https://github.com/gaearon/overreacted.io/issues/65
-      const html = (edge.node.html || ``)
+      const replacedHtml = (html || ``)
         .replace(/href="\//g, `href="${siteUrl}/`)
         .replace(/src="\//g, `src="${siteUrl}/`)
         .replace(/"\/static\//g, `"${siteUrl}/static/`)
         .replace(/,\s*\/static\//g, `,${siteUrl}/static/`)
 
       return {
-        description: edge.node.excerpt,
-        date: edge.node.date,
+        description: excerpt,
+        date,
         url,
         title,
         guid: url,
         custom_elements: [
           {
             "content:encoded": `<div style="width: 100%; margin: 0 auto; max-width: 800px; padding: 40px 40px;">
-                ${html}
+                ${replacedHtml}
                 ${postText}
               </div>`,
           },
