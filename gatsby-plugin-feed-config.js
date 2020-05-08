@@ -87,8 +87,7 @@ module.exports = {
           {
             "content:encoded": `
               <div style="width: 100%; margin: 0 auto; max-width: 800px; padding: 40px 40px;">
-                ${html}
-                \${replacedHtml}
+                ${replacedHtml}
                 \${postText}
               </div>
             `,
