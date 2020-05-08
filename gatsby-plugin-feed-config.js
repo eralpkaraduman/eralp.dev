@@ -35,7 +35,7 @@ module.exports = {
       }
      }
    `,
-  serialize: ({ query: { allBlogPost, allMdx, site } }) => {
+  serialize: ({ query: { allMdx, site } }) => {
     const {
       siteUrl,
       title,
@@ -75,11 +75,10 @@ module.exports = {
         .replace(/,\s*\/static\//g, `,${siteUrl}/static/`)
 
       return {
-        description: excerpt,
-        date,
-        url,
-        slug,
         title,
+        description: excerpt,
+        url,
+        date,
         guid: url,
         custom_elements: [
           {
