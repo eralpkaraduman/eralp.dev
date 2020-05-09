@@ -41,6 +41,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-sitemap`,
   ],
   siteMetadata: {
     title: siteTitle,
