@@ -1,3 +1,6 @@
+const siteTitle = `eralp.dev`
+const siteDescription = `Blog of software engineer Eralp Karaduman`
+
 module.exports = {
   plugins: [
     `gatsby-theme-blog`,
@@ -13,15 +16,39 @@ module.exports = {
         trackingId: `UA-85599671-3`,
       },
     },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: siteTitle,
+        short_name: siteTitle,
+        description: siteDescription,
+        start_url: "/",
+        background_color: "#121212",
+        theme_color: "#D19A66",
+        display: "standalone",
+        icons: [
+          {
+            src: "/favicons/icon_192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "/favicons/icon_512.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+        ],
+      },
+    },
   ],
   siteMetadata: {
-    title: `eralp.dev`,
+    title: siteTitle,
     author: `Eralp Karaduman`,
     authorHomePage: "https://eralpkaraduman.com",
     authorHomePageTitle: "eralpkaraduman.com",
     authorBio:
       "I'm Eralp Karaduman, a software engineer. I make apps, games and digital toys.",
-    description: `Blog of Eralp Karaduman`,
+    description: siteDescription,
     siteUrl: `https://eralp.dev`,
     social: [
       {
