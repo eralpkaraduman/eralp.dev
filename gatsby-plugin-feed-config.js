@@ -22,13 +22,14 @@ module.exports = {
         sort: {order: DESC, fields: [frontmatter___date]}) {
         edges {
           node {
-            id
             excerpt(pruneLength: 250)
             html
+            fields {
+              slug
+            }
             frontmatter {
               title
               date
-              slug
             }
           }
         }
@@ -46,8 +47,9 @@ module.exports = {
     } = site.siteMetadata
     const stripSlash = slug => (slug.startsWith("/") ? slug.slice(1) : slug)
     return allMdx.edges.map(edge => {
-      const { id, excerpt, html, frontmatter } = edge.node
-      const { title, date, slug } = frontmatter
+      const { excerpt, html, frontmatter, fields } = edge.node
+      const { title, date } = frontmatter
+      const { slug } = fields
       const url = `${siteUrl}/${stripSlash(slug)}`
 
       // Hacky workaround for https://github.com/gaearon/overreacted.io/issues/65
