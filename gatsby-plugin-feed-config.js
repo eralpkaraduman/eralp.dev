@@ -17,7 +17,6 @@ module.exports = {
       }
       allMdx(
         limit: 1000,
-        filter: {frontmatter: {published: {ne: false}}
         fileAbsolutePath: {regex: "//content//"}},
         sort: {order: DESC, fields: [frontmatter___date]}) {
         edges {
