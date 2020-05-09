@@ -83,7 +83,7 @@ module.exports = {
                     </div>
                   </div>
                 </div>
-                <div style="font-style: italic;">(This article was posted to my blog at <a href="${siteUrl}">${siteUrl}</a>. You can <a href="${url}">read it online by clicking here</a>.)</div>
+                <div style="font-style: italic;">(This article was posted to my blog at <a href="${siteUrl}">${title}</a>. You can <a href="${url}">read it online by clicking here</a>.)</div>
               </div>
             `,
           },
