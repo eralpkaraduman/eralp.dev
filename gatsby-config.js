@@ -40,6 +40,10 @@ module.exports = {
         name: `LinkedIn`,
         url: `https://linkedin.com/in/eralpkaraduman`,
       },
+      {
+        name: `RSS`,
+        url: `/rss.xml`,
+      },
     ],
   },
 }
