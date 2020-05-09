@@ -7,6 +7,12 @@ module.exports = {
         feeds: [require("./gatsby-plugin-feed-config")],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-85599671-3`,
+      },
+    },
   ],
   siteMetadata: {
     title: `eralp.dev`,
