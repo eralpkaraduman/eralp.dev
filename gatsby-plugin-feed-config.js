@@ -39,7 +39,7 @@ module.exports = {
   serialize: ({ query: { allMdx, site } }) => {
     const {
       siteUrl,
-      title,
+      title: siteTitle,
       author,
       authorBio,
       authorHomePage,
@@ -83,7 +83,7 @@ module.exports = {
                     </div>
                   </div>
                 </div>
-                <div style="font-style: italic;">(This article was posted to my blog at <a href="${siteUrl}">${title}</a>. You can <a href="${url}">read it online by clicking here</a>.)</div>
+                <div style="font-style: italic;">(This article was posted to my blog at <a href="${siteUrl}">${siteTitle}</a>. You can <a href="${url}">read it online by clicking here</a>.)</div>
               </div>
             `,
           },
