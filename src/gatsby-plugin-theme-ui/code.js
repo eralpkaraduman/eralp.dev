@@ -55,23 +55,25 @@ function Code({ codeString, language, metastring }) {
                   line,
                   key: i,
                   sx: {
+                    paddingLeft: "1em",
+                    paddingRight: "1em",
                     backgroundColor: shouldHighlightLine(i)
                       ? "codeHighlight"
                       : undefined,
                   },
                 })}
               >
-                <span
+                {/* Uncommend block below to render line numbers */}
+                {/* <span
                   sx={{
                     display: "inline-block",
                     width: "2em",
-                    paddingLeft: "0.5em",
                     userSelect: "none",
-                    opacity: 0.3,
+                    opacity: 0.2,
                   }}
                 >
                   {i + 1}
-                </span>
+                </span> */}
                 {line.map((token, key) => (
                   <span key={key} {...getTokenProps({ token, key })} />
                 ))}
