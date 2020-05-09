@@ -70,14 +70,11 @@ module.exports = {
                 ${replacedHtml}
                 <div>
                   <div style="width: 100%; margin: 0 auto; max-width: 800px; padding-top: 40px; padding-bottom: 30px;">
-                    <div style="display: flex;">
-                      <div style="padding-right: 20px; align-items: center;">
+                    <div style="display: flex; align-items: center;">
+                      <div style="padding-right: 10px; align-items: center;">
                         <img
-                          width="48"
-                          height="48"
                           src="${siteUrl}/images/icon_64.png"
                           alt="${author}"
-                          style="max-width: 80px; border-radius: 50%;"
                         />
                       </div>
                       <p>${authorBio}<br/>Visit <a href="${authorHomePage}">${authorHomePageTitle}</a> to learn more about me.</p>
