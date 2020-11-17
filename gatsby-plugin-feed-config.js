@@ -17,10 +17,11 @@ module.exports = {
       }
       allMdx(
         limit: 1000,
-        fileAbsolutePath: {regex: "//content//"},
+        filter: { fileAbsolutePath: { regex: "//content//" } }
         sort: {order: DESC, fields: [frontmatter___date]}) {
         edges {
           node {
+            fileAbsolutePath
             excerpt(pruneLength: 250)
             html
             fields {
