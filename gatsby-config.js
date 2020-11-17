@@ -58,10 +58,6 @@ module.exports = {
         url: `https://twitter.com/eralpkaraduman`,
       },
       {
-        name: `Instagram`,
-        url: `https://instagram.com/eralpkaraduman`,
-      },
-      {
         name: `GitHub`,
         url: `https://github.com/eralpkaraduman`,
       },
