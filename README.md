@@ -86,11 +86,11 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 Here are some places to start:
 
-### Themes
+## Themes
 
 - To learn more about Gatsby themes specifically, we recommend checking out the [theme docs](https://www.gatsbyjs.org/docs/themes/).
 
-### General
+## General
 
 - **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
