@@ -14,7 +14,8 @@ const RE = /{([\d,-]+)}/
 const wrapperStyles = css`
   overflow: auto;
   background-color: ${theme.plain.backgroundColor};
-  border-radius: 0.2rem;
+  border-radius: 0.2em;
+  margin-bottom: 1.1em;
 `
 
 const preStyles = css`

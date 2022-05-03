@@ -1,5 +1,5 @@
 ---
-title: Mocking API with embedded web server in flutter
+title: Mocking API's using embedded web server inside flutter apps
 date: 2021-05-03
 ---
 
@@ -163,4 +163,152 @@ extension JsonMockResponse on Response {
 
 Let's break this down and see what is happening;
 
-To be continued...
+
+Gist of it is that we make create class called `LocalMockApiServer` which sets up the server, and has a async `start` method. I removed some implementation details from below for brevity, complete class implementation is above.
+
+```dart
+class LocalMockApiServer {
+  static final host = 'localhost';
+  static final port = 3131;
+  static get baseUrl => 'http://$host:$port/';
+
+  late shelf_router.Router app;
+
+  LocalMockApiServer() {
+    app = shelf_router.Router();
+
+    //  1: Request handler here
+    //  2: Request handler here
+  }
+
+  Future<void> start() async {
+    // 3: Log processor setup here
+
+    var server = await shelf_io.serve(handler, host, port);
+    server.autoCompress = true;
+
+    log.info('serving on: $baseUrl');
+  }
+}
+```
+
+Then we call the start method from our `main.dart` some place between `WidgetsFlutterBinding.ensureInitialized()` and `runApp`
+
+```dart
+void main() async {
+  // ...
+  WidgetsFlutterBinding.ensureInitialized();
+  // ...
+  await LocalMockApiServer().start();
+
+  runApp(
+    //...
+  );
+}
+```
+
+Doing this will start the server in the background, and your app should launch as it should before. You should see the logs;
+
+```
+LocalMockApiServer: starting...
+LocalMockApiServer: serving on: http://localhost:3131
+```
+
+`await`'ing on `LocalMockApiServer().start()` will ensure that server is up and running before your app starts calling the endpoints.
+
+Implement your mock API endpoint handlers, these go where I marked `// 1` and `// 2` above;
+
+Parsing access token from request headers, and responding it as user id (doesn't make sense but just for testing and visibility)
+
+```dart
+app.get('/user/account', (Request req) async {
+  return JsonMockResponse.ok({
+    'id': req.accessToken,
+  });
+});
+```
+
+`JsonMockResponse.ok` `Request.accessToken` are implemented as convenience extensions, I will explain them below.
+
+Responding with an array as the root of the json;
+
+```dart
+app.get('/inventory', (Request req) async {
+  return JsonMockResponse.ok([
+    {
+      'key': 'value',
+    },
+    {
+      'key': 'value',
+    },
+  ], delay: 1200); // Maybe you need more than the default delay
+});
+```
+
+If you want a post request handler swap `get` with `post` after `app.`. `bodyJsonValue` method on `Request` is implemented as an extension. Explained below after this block.
+
+```dart
+app.post('/account/create', (Request req) async {
+  var token = await req.bodyJsonValue('token');
+  log.info('create account request for token: $token');
+  return JsonMockResponse.ok({
+    'id': 'mock_id_${token?.substring(0, 8)}',
+  });
+});
+```
+
+Set up the log processor. This part below replaces `// 3` above inside the start method. This is for intercepting the server logs and plugging in whatever logging system you have. I'm using [logger](https://pub.dev/packages/logger).
+
+```dart
+Future<void> start() async {
+  // ...
+
+  var handler = const Pipeline().addMiddleware(
+    logRequests(logger: (message, isError) {
+      if (isError)
+        log.severe(message);
+      else
+        log.info(message);
+    }),
+  ).addHandler(app);
+
+  // ...
+}
+```
+
+And then we have couple quality-of-life extensions on top of flutter's `Request` and `Response`. Include these after the `LocalMockApiServer` definition.
+
+Request extension adds two things;
+- `bodyJsonValue`: Reads request body then decodes it as json.
+- `accessToken`: Reads standard oauth Authorization header's Bearer value.
+
+```dart
+extension on Request {
+  Future<String?> bodyJsonValue(String param) async {
+    return jsonDecode(await this.readAsString())?[param];
+  }
+
+  String? get accessToken =>
+      this.headers['Authorization']?.split('Bearer ').last;
+}
+```
+
+JsonMockResponse is an extension based on `Response` with a re-definition of `ok`. Which responds with 200 status code and encodes the given map into json string as body. Responds with a optionally configurable delay.
+
+Since this code is likely to be repeated in every response, saves time by not writing Content-Type headers and encoding code repeatedly.
+
+```dart
+extension JsonMockResponse on Response {
+  static ok<T>(T json, {int delay = 800}) async {
+    await Future.delayed(Duration(milliseconds: delay)); // Emulate lag
+    return Response.ok(
+      jsonEncode(json),
+      headers: {'Content-Type': 'application/json'},
+    );
+  }
+}
+```
+
+This is it. Then call these endpoints as you would from any local server. As in `http://localhost:3131/inventory`. Don't forget that this server runs in the phone or emulator/simulator. Unless you are targeting desktop or web. This server won't be accessible from your desktop environment.
+
+This solution is simply and idea, that was surprisingly easy top implement that saved a lot of time for me. I was able to implement the API Client code, data models, deserialization and serialization even before any APIs were developed. It was particulary useful as this mock server is distributed along with the app itself, from Google play internal testing or testflight etc. Keep in mind that all of these code is meant to be deleted once the actual apis exist. Let me know what you think about this idea!
