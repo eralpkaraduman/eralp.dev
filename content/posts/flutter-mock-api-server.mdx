@@ -1,0 +1,167 @@
+---
+title: Mocking API with embedded web server in flutter
+date: 2021-05-03
+---
+
+Say you are working on an app ui. But required APIs are not ready. Yet you need to deliver the app UI implementation as complete as possible anyways. You could;
+
+- Hardcode API responses into app code
+- Use something like [mockito](https://pub.dev/packages/mockito) and work with tests
+- Create a web server app and run it separately.
+- Embed a web server inside flutter app itself.
+
+I ended up taking the last option, skip to it below if rest of them seem obvious. Each option has their pros and cons so;
+
+## Hardcoding API responses
+
+### Pros
+- Easy.
+- App UI behaves as expected.
+- Everything can be done in same codebase.
+- No need to have a server running.
+
+### Cons
+- Code is not final
+- Difficult to test http errors
+- Difficult to test race conditions
+- Difficult to test serialization / deserialization
+
+## Developing with mocks / stubs in tests
+
+### Pros
+- Means that you write tests, nice.
+- Ability to test http errors
+- Ability to test serialization / deserialization
+- Mocks are in same codebase with app.
+
+### Cons
+- Doesn't work in end user UI.
+- End users can't test with it.
+- Need to run the tests to work with them.
+- Need to write and setup tests (not too bad anyways)
+
+## Create a web server app and run it separately
+
+### Pros
+- Having an actual web server close as it gets to real API implementation
+- Ability to test everything related to http and REST
+- Ability to test http errors
+- Ability to test JSON serialization / deserialization
+
+### Cons
+- Need to create the web server as a separate project.
+- Say if you made it in nodejs, need to run it separately.
+- Need to figure out how to get the correct port relayed to the emulator
+- What if port and uri changes, how does the app know
+- Distributed release app will need to talk to the web server so server needs to be up and running all the time somewhere.
+
+None of these options seemed to be covering everything we needed so. We had this idea;
+
+## Put the web server into the app
+This is not too different than any app having an embedded web server in it. What this means is to have a web server process spawned when app launces, then serves mock endpoints on localhost:3169 (whatever port you want really) Then you app talks to itself to fetch from the mock api.
+
+This could ofcourse be achieved in multiple ways also. You could embed any web server via a native module, similarly in react-native too.
+
+This was particulary simple to do using flutter. Being able to useboth same process and same language and codebase made it easy to make and extend.
+
+- Server restarts when you hot-restart the flutter app
+- What port will be serving is in your code so your api client knows which port to listen from.
+- Re-use data models made for dart.
+- Same json encoding/decoding approach with the actual app code.
+
+When you compare this with other options above;
+
+### Pros
+- Server in the same app
+- Same language and project
+- Easy to develop
+- Lots of shared code
+
+### Cons
+- Maybe the port would clash with something (but you can change the port)
+
+Implementation of this is based on flutter's own HTTP server. Using a convenience wrapper around it with [shelf](https://pub.dev/packages/shelf) package. And for making intercepting requests more declaratively similar to express / sinatra / flash -ish way, used [shelf_router](https://pub.dev/packages/shelf_router) package.
+
+So here's how the server code looks like;
+
+```dart
+
+import 'dart:convert';
+
+import 'package:logging/logging.dart';
+import 'package:shelf/shelf.dart';
+import 'package:shelf/shelf_io.dart' as shelf_io;
+import 'package:shelf_router/shelf_router.dart' as shelf_router;
+
+Logger log = Logger('LocalMockApiServer');
+
+class LocalMockApiServer {
+  static final host = 'localhost';
+  static final port = 3131;
+  static get baseUrl => 'http://$host:$port/';
+
+  late shelf_router.Router app;
+
+  LocalMockApiServer() {
+    app = shelf_router.Router();
+
+    app.get('/user/account', (Request req) async {
+      return JsonMockResponse.ok({
+        'id': req.accessToken,
+      });
+    });
+
+    app.get('/user/investments', (Request req) async {
+      return JsonMockResponse.ok([
+        {
+          'key': 'value',
+        },
+        {
+          'key': 'value',
+        },
+      ], delay: 1200);
+    });
+  }
+
+  Future<void> start() async {
+    log.info('starting...');
+
+    var handler = const Pipeline().addMiddleware(
+      logRequests(logger: (message, isError) {
+        if (isError)
+          log.severe(message);
+        else
+          log.info(message);
+      }),
+    ).addHandler(app);
+
+    var server = await shelf_io.serve(handler, host, port);
+    server.autoCompress = true;
+
+    log.info('serving on: $baseUrl');
+  }
+}
+
+extension on Request {
+  Future<String?> bodyJsonValue(String param) async {
+    return jsonDecode(await this.readAsString())?[param];
+  }
+
+  String? get accessToken =>
+      this.headers['Authorization']?.split('Bearer ').last;
+}
+
+extension JsonMockResponse on Response {
+  static ok<T>(T json, {int delay = 800}) async {
+    await Future.delayed(Duration(milliseconds: delay)); // Emulate lag
+    return Response.ok(
+      jsonEncode(json),
+      headers: {'Content-Type': 'application/json'},
+    );
+  }
+}
+```
+
+Let's break this down and see what is happening;
+
+To be continued...
