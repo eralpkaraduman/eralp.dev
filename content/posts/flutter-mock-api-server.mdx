@@ -3,73 +3,73 @@ title: Mocking API's using embedded web server inside flutter apps
 date: 2021-05-03
 ---
 
-Say you are working on an app ui. But required APIs are not ready. Yet you need to deliver the app UI implementation as complete as possible anyways. You could;
+Say you are working on an app UI. But required APIs are not ready. Yet you need to deliver the app UI implementation as complete as possible. You could;
 
 - Hardcode API responses into app code
 - Use something like [mockito](https://pub.dev/packages/mockito) and work with tests
 - Create a web server app and run it separately.
-- Embed a web server inside flutter app itself.
+- Embed a web server inside the flutter app itself.
 
-I ended up taking the last option, skip to it below if rest of them seem obvious. Each option has their pros and cons so;
+I ended up taking the last option. Skip to it below if the rest of the options seem apparent. Each option has its pros and cons, so;
 
 ## Hardcoding API responses
 
 ### Pros
 - Easy.
 - App UI behaves as expected.
-- Everything can be done in same codebase.
+- Everything can be done in the same codebase.
 - No need to have a server running.
 
 ### Cons
-- Code is not final
-- Difficult to test http errors
+- The code is not final
+- Difficult to test HTTP errors
 - Difficult to test race conditions
 - Difficult to test serialization / deserialization
 
-## Developing with mocks / stubs in tests
+## Developing with mocks/stubs in tests
 
 ### Pros
 - Means that you write tests, nice.
-- Ability to test http errors
-- Ability to test serialization / deserialization
-- Mocks are in same codebase with app.
+- Ability to test HTTP errors
+- Ability to test serialization/deserialization
+- Mocks are in the same codebase as the app.
 
 ### Cons
-- Doesn't work in end user UI.
-- End users can't test with it.
+- Doesn't work in end-user UI.
+- End-users can't test with it.
 - Need to run the tests to work with them.
-- Need to write and setup tests (not too bad anyways)
+- Need to write and set up tests (not too bad anyway)
 
 ## Create a web server app and run it separately
 
 ### Pros
 - Having an actual web server close as it gets to real API implementation
-- Ability to test everything related to http and REST
-- Ability to test http errors
+- Ability to test everything related to HTTP and REST
+- Ability to test HTTP errors
 - Ability to test JSON serialization / deserialization
 
 ### Cons
 - Need to create the web server as a separate project.
-- Say if you made it in nodejs, need to run it separately.
+If you made it in nodejs, you would need to run it separately.
 - Need to figure out how to get the correct port relayed to the emulator
-- What if port and uri changes, how does the app know
-- Distributed release app will need to talk to the web server so server needs to be up and running all the time somewhere.
+- What if the port and URI change? How does the app know
+- Distributed release app will need to talk to the web server, so the server needs to be up and running all the time somewhere.
 
 None of these options seemed to be covering everything we needed so. We had this idea;
 
 ## Put the web server into the app
-This is not too different than any app having an embedded web server in it. What this means is to have a web server process spawned when app launces, then serves mock endpoints on localhost:3169 (whatever port you want really) Then you app talks to itself to fetch from the mock api.
+This is not too different from any app with an embedded web server. This means to have a web server process spawned when the app launches, then serve mock endpoints on localhost:3169 (whatever port you want, really). Then your app talks to itself to fetch from the mock API.
 
-This could ofcourse be achieved in multiple ways also. You could embed any web server via a native module, similarly in react-native too.
+This could, of course, be achieved in multiple ways also. For example, you could embed any web server via a native module, similarly in react-native.
 
-This was particulary simple to do using flutter. Being able to useboth same process and same language and codebase made it easy to make and extend.
+This was particularly simple to do using flutter. In addition, using both the same process and the same language and codebase made it easy to make and extend.
 
 - Server restarts when you hot-restart the flutter app
-- What port will be serving is in your code so your api client knows which port to listen from.
+- What port will be serving is in your code, so your API client knows which port to listen from.
 - Re-use data models made for dart.
-- Same json encoding/decoding approach with the actual app code.
+- Same JSON encoding/decoding approach with the actual app code.
 
-When you compare this with other options above;
+When you compare this with the other options above;
 
 ### Pros
 - Server in the same app
@@ -80,9 +80,9 @@ When you compare this with other options above;
 ### Cons
 - Maybe the port would clash with something (but you can change the port)
 
-Implementation of this is based on flutter's own HTTP server. Using a convenience wrapper around it with [shelf](https://pub.dev/packages/shelf) package. And for making intercepting requests more declaratively similar to express / sinatra / flash -ish way, used [shelf_router](https://pub.dev/packages/shelf_router) package.
+Implementation of this is based on flutter's own HTTP server. So use a convenience wrapper around it with [shelf](https://pub.dev/packages/shelf) package. And for making intercepting requests more declaratively similar to Express / Sinatra / Flask -ish way, used [shelf_router](https://pub.dev/packages/shelf_router) package.
 
-So here's how the server code looks like;
+So here's what the server code looks like;
 
 ```dart
 import 'dart:convert';
@@ -164,7 +164,7 @@ extension JsonMockResponse on Response {
 Let's break this down and see what is happening;
 
 
-Gist of it is that we make create class called `LocalMockApiServer` which sets up the server, and has a async `start` method. I removed some implementation details from below for brevity, complete class implementation is above.
+The gist is that we create a class called `LocalMockApiServer,` which sets up the server and has an async `start` method. I removed some implementation details from below for brevity. The complete class implementation is above.
 
 ```dart
 class LocalMockApiServer {
@@ -214,11 +214,11 @@ LocalMockApiServer: starting...
 LocalMockApiServer: serving on: http://localhost:3131
 ```
 
-`await`'ing on `LocalMockApiServer().start()` will ensure that server is up and running before your app starts calling the endpoints.
+`await`ing on `LocalMockApiServer().start()` will ensure that server is up and running before your app starts calling the endpoints.
 
-Implement your mock API endpoint handlers, these go where I marked `// 1` and `// 2` above;
+Implement your mock API endpoint handlers. These go where I marked `// 1` and `// 2` above;
 
-Parsing access token from request headers, and responding it as user id (doesn't make sense but just for testing and visibility)
+Parsing access token from request headers and responding to it as user id (doesn't make sense but just for testing and visibility)
 
 ```dart
 app.get('/user/account', (Request req) async {
@@ -228,9 +228,9 @@ app.get('/user/account', (Request req) async {
 });
 ```
 
-`JsonMockResponse.ok` `Request.accessToken` are implemented as convenience extensions, I will explain them below.
+`JsonMockResponse.ok` `Request.accessToken` are implemented as convenience extensions. I will explain them below.
 
-Responding with an array as the root of the json;
+Responding with an array as the root of the JSON;
 
 ```dart
 app.get('/inventory', (Request req) async {
@@ -245,7 +245,7 @@ app.get('/inventory', (Request req) async {
 });
 ```
 
-If you want a post request handler swap `get` with `post` after `app.`. `bodyJsonValue` method on `Request` is implemented as an extension. Explained below after this block.
+If you want a post request handler, swap `get` with `post` after `app.` `bodyJsonValue` method on `Request` is implemented as an extension. Explained below after this block.
 
 ```dart
 app.post('/account/create', (Request req) async {
@@ -257,7 +257,7 @@ app.post('/account/create', (Request req) async {
 });
 ```
 
-Set up the log processor. This part below replaces `// 3` above inside the start method. This is for intercepting the server logs and plugging in whatever logging system you have. I'm using [logger](https://pub.dev/packages/logger).
+Set up the log processor. Below, this part replaces `// 3` above inside the start method. This is for intercepting the server logs and plugging in whatever logging system you have. I'm using [logger](https://pub.dev/packages/logger).
 
 ```dart
 Future<void> start() async {
@@ -276,11 +276,11 @@ Future<void> start() async {
 }
 ```
 
-And then we have couple quality-of-life extensions on top of flutter's `Request` and `Response`. Include these after the `LocalMockApiServer` definition.
+And then we have a couple of quality-of-life extensions on top of flutter's `Request` and `Response`. Include these after the `LocalMockApiServer` definition.
 
 Request extension adds two things;
-- `bodyJsonValue`: Reads request body then decodes it as json.
-- `accessToken`: Reads standard oauth Authorization header's Bearer value.
+- `bodyJsonValue`: Reads request body then decodes it as JSON.
+- `accessToken`: Reads standard OAuth Authorization header's Bearer value.
 
 ```dart
 extension on Request {
@@ -293,9 +293,9 @@ extension on Request {
 }
 ```
 
-JsonMockResponse is an extension based on `Response` with a re-definition of `ok`. Which responds with 200 status code and encodes the given map into json string as body. Responds with a optionally configurable delay.
+JsonMockResponse is an extension based on `Response` with a re-definition of `ok`. Which responds with 200 status codes and encodes the given map into a JSON string as the body. Responds with an optionally configurable delay.
 
-Since this code is likely to be repeated in every response, saves time by not writing Content-Type headers and encoding code repeatedly.
+Since this code is likely to be repeated in every response, it saves time by not writing Content-Type headers and encoding code repeatedly.
 
 ```dart
 extension JsonMockResponse on Response {
@@ -309,6 +309,6 @@ extension JsonMockResponse on Response {
 }
 ```
 
-This is it. Then call these endpoints as you would from any local server. As in `http://localhost:3131/inventory`. Don't forget that this server runs in the phone or emulator/simulator. Unless you are targeting desktop or web. This server won't be accessible from your desktop environment.
+This is it. Then call these endpoints as you would from any local server, as in `http://localhost:3131/inventory`. Don't forget that this server runs on the phone or emulator/simulator. Unless you are targeting desktop or web. This server won't be accessible from your desktop environment.
 
-This solution is simply and idea, that was surprisingly easy top implement that saved a lot of time for me. I was able to implement the API Client code, data models, deserialization and serialization even before any APIs were developed. It was particulary useful as this mock server is distributed along with the app itself, from Google play internal testing or testflight etc. Keep in mind that all of these code is meant to be deleted once the actual apis exist. Let me know what you think about this idea!
+This solution is a simple idea that was surprisingly easy to implement and saved me a lot of time. I was able to implement the API Client code, data models, deserialization, and serialization even before any APIs were developed. It was handy as this mock server is distributed along with the app itself, from Google play internal testing or test flight, etc. Remember that all of these codes are meant to be deleted once the actual APIs exist. Let me know what you think about this idea!
