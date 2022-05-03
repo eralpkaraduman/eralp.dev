@@ -4,13 +4,17 @@ import { jsx } from "theme-ui"
 import theme from "./prism-theme"
 import Highlight, { defaultProps } from "prism-react-renderer"
 import { css } from "@emotion/core"
+import Prism from "prism-react-renderer/prism"
+// Add non-default languages
+;(typeof global !== "undefined" ? global : window).Prism = Prism
+require("prismjs/components/prism-dart")
 
 const RE = /{([\d,-]+)}/
 
 const wrapperStyles = css`
   overflow: auto;
   background-color: ${theme.plain.backgroundColor};
-  border-radius: 5px;
+  border-radius: 0.2rem;
 `
 
 const preStyles = css`
@@ -40,6 +44,7 @@ function Code({ codeString, language, metastring }) {
   const shouldHighlightLine = calculateLinesToHighlight(metastring)
   return (
     <Highlight
+      prism={Prism}
       {...defaultProps}
       code={codeString}
       language={language}
@@ -55,16 +60,15 @@ function Code({ codeString, language, metastring }) {
                   line,
                   key: i,
                   sx: {
-                    paddingLeft: "1em",
-                    paddingRight: "1em",
+                    paddingLeft: "1rem",
+                    paddingRight: "1rem",
                     backgroundColor: shouldHighlightLine(i)
                       ? "codeHighlight"
                       : undefined,
                   },
                 })}
               >
-                {/* Uncommend block below to render line numbers */}
-                {/* <span
+                <span
                   sx={{
                     display: "inline-block",
                     width: "2em",
@@ -73,7 +77,7 @@ function Code({ codeString, language, metastring }) {
                   }}
                 >
                   {i + 1}
-                </span> */}
+                </span>
                 {line.map((token, key) => (
                   <span key={key} {...getTokenProps({ token, key })} />
                 ))}
