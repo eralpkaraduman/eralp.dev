@@ -1,0 +1,20 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "GitHub CLI PR's"
+description: "GitHub CLI PR's"
+publishDate: "4 Jan 2021"
+---
+
+Even though I make money by developing web apps, I don't like to use browsers much. If there's any possibility to use anything else than a web app, I'd like to try it. So I tried opening GitHub PR's without the website using GitHub's CLI. It is very nice, here are my favourite commands;
+
+This one simply opens a draft PR with last commit as title.
+
+```bash
+gh pr create --fill --draft
+``` 
+
+And this one brings the URL of the PR
+
+```bash
+gh pr view
+```
