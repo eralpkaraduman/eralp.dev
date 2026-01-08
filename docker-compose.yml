@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  gatsby:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount source code for hot reload
+      - .:/app
+      # Use named volume for node_modules to preserve container's installed deps
+      - node_modules:/app/node_modules
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=1
+      - GATSBY_WEBPACK_PUBLICPATH=/
+    command: npm run develop -- -H 0.0.0.0
+
+volumes:
+  node_modules:

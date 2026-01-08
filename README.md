@@ -9,6 +9,29 @@
 
 Quickly get started using the Gatsby blog theme! This starter creates a new Gatsby site that is preconfigured to work with the [official Gatsby blog theme](https://www.npmjs.com/package/gatsby-theme-blog).
 
+## Development on Apple Silicon (M1/M2/M3)
+
+This project uses Gatsby v2 with an older version of the `sharp` image processing library, which does not have prebuilt binaries for Apple Silicon (arm64). Building from source fails due to missing `libvips` dependencies.
+
+**Solution:** Use Docker with x86 emulation to run the development server.
+
+```shell
+# Start the development server
+docker-compose up
+
+# Stop the server
+docker-compose down
+
+# Rebuild after dependency changes
+docker-compose build --no-cache
+```
+
+The site will be available at `http://localhost:8000`.
+
+Hot reload is enabled - changes to source files will automatically refresh the browser.
+
+> **Note:** On Intel Macs or other platforms, you can run `npm install && npm run develop` directly without Docker.
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**

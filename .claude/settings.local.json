@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(source ~/.nvm/nvm.sh)",
+      "Bash(nvm use:*)",
+      "Bash(npm install)",
+      "Bash(npm run dev:*)",
+      "Bash(git checkout:*)",
+      "WebSearch",
+      "Bash(docker-compose build:*)",
+      "Bash(docker-compose up:*)",
+      "WebFetch(domain:v2.gatsbyjs.com)",
+      "WebFetch(domain:www.gatsbyjs.com)",
+      "Bash(docker-compose down:*)"
+    ]
+  }
+}
