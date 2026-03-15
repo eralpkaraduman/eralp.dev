@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+  background: #121212;
+  color: #e0e0e0;
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+a {
+  color: #D19A66;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header nav {
+  margin-bottom: 2rem;
+}
+
+.site-header-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.site-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 1.75rem;
+  color: #e0e0e0;
+  margin-top: 0.75rem;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.bio {
+  margin-bottom: 1rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 2rem 0;
+}
+
+.posts ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.posts li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.posts time {
+  color: #888;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.breadcrumb {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+article header {
+  margin-bottom: 2rem;
+}
+
+article h1 {
+  color: #D19A66;
+  margin-bottom: 0.25rem;
+}
+
+article time {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+article img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4 {
+  color: #D19A66;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+pre {
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+code {
+  font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+p code {
+  background: #1e1e1e;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+}
+
+blockquote {
+  border-left: 3px solid #D19A66;
+  padding-left: 1rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .posts li {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+}

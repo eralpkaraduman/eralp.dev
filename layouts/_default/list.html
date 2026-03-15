@@ -1,0 +1,34 @@
+{{ define "main" }}
+  {{ if .IsHome }}
+  <section class="hero">
+    <img src="/images/og-default.png" alt="{{ site.Params.author }}" class="avatar">
+    <h1>{{ site.Params.author }}</h1>
+  </section>
+  <section class="bio">
+    {{ .Content }}
+  </section>
+  <hr>
+  <section class="posts">
+    <h2>Posts</h2>
+    <ul>
+      {{ range where site.RegularPages "Section" "posts" }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ else }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <ul>
+    {{ range .Pages }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+{{ end }}

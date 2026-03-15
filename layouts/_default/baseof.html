@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="icon" href="/images/favicon.png" type="image/png" sizes="64x64">
+  <link rel="stylesheet" href="/css/style.css">
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
+  {{ with site.Params.umami }}
+  <script defer src="{{ .src }}" data-website-id="{{ .websiteId }}"></script>
+  {{ end }}
+</head>
+<body>
+  {{ if not .IsHome }}
+  <header>
+    <nav>
+      <a href="/" class="site-header-link">
+        <img src="/images/favicon.png" alt="{{ site.Params.author }}" class="site-logo">
+        <span class="site-title">{{ site.Title }}</span>
+      </a>
+    </nav>
+  </header>
+  {{ end }}
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    <p>&copy; {{ now.Year }} {{ site.Params.author }}</p>
+    <ul class="social-links">
+      {{ range site.Params.social }}
+      <li><a href="{{ .url }}" {{ if ne .name "RSS" }}rel="me noopener noreferrer" target="_blank"{{ end }}>{{ .name }}</a></li>
+      {{ end }}
+    </ul>
+  </footer>
+</body>
+</html>

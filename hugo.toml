@@ -1,0 +1,46 @@
+baseURL = 'https://eralp.dev/'
+languageCode = 'en-us'
+title = 'eralp.dev'
+enableRobotsTXT = true
+
+[params]
+  description = 'Blog of software engineer Eralp Karaduman'
+  author = 'Eralp Karaduman'
+  authorBio = "I'm Eralp Karaduman, a software engineer. I make apps, games and digital toys."
+  images = ['images/og-default.png']
+
+  [params.umami]
+    src = 'https://umami.cicex.cloud/script.js'
+    websiteId = '62947848-8acb-4820-9ddb-1ed5f3c3d6b2'
+
+  [[params.social]]
+    name = 'GitHub'
+    url = 'https://github.com/eralpkaraduman'
+
+  [[params.social]]
+    name = 'Bluesky'
+    url = 'https://bsky.app/profile/eralpkaraduman.com'
+
+  [[params.social]]
+    name = 'Mastodon'
+    url = 'https://mastodon.social/@eralp'
+
+  [[params.social]]
+    name = 'LinkedIn'
+    url = 'https://linkedin.com/in/eralpkaraduman'
+
+  [[params.social]]
+    name = 'Twitter'
+    url = 'https://twitter.com/eralpkaraduman'
+
+  [[params.social]]
+    name = 'RSS'
+    url = '/index.xml'
+
+[markup]
+  [markup.highlight]
+    style = 'monokai'
+
+[sitemap]
+  changeFreq = ''
+  filename = 'sitemap.xml'

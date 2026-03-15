@@ -1,0 +1,41 @@
+User-agent: *
+Allow: /
+
+Sitemap: {{ .Site.BaseURL }}sitemap.xml
+
+# Block AI training crawlers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
