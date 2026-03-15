@@ -1,27 +1,15 @@
 ---
 title: "eralp.dev"
+intro: |
+  I'm a Senior Software Engineer at **Starship Technologies** in Helsinki, Finland. I've been building software since 2008. I ship end-to-end — from prototype to production infrastructure — solo or with a team.
+
+  [Get in touch](mailto:eralp@eralpkaraduman.com) | [CV](https://eralpkaraduman.github.io/cv/)
 ---
 
-I'm a **Senior Software Engineer** based in Helsinki, Finland. Working on **mobile & web apps** as services for an autonomous delivery platform.
+Currently working on mobile & web apps at Starship. My main stack is **React Native**, **React**, **Node.js**, **GraphQL**, and **TypeScript**. I also write native **Android/iOS bridges** for React Native — from Bluetooth hardware integrations to MDM tooling. Previously shipped iOS apps with **Swift**, and cross-platform apps with **Flutter** and **React Native**.
 
-Lately I've been making **cross-platform mobile apps** and **full stack web apps** using **React Native**, **React**, **NodeJS**, **Next.js** and **TypeScript**.
+I have solid infrastructure experience — from self-hosted setups on **Hetzner** with **Coolify**, to **Cloudflare** edge services (Pages, Workers, D1, R2, Tunnels), and deploying to **Kubernetes** in production. Previously built on **GCP**.
 
-Previously I built **iOS** apps with **Flutter**, **Swift** / **Objective-C** along with their **backend** and **Android** counterparts for quite some time.
+I build side projects ([GitHub](https://github.com/eralpkaraduman)) — from 3D web apps and Chrome extensions to hardware hacks and electronics. I'm also building with **AI tools** — coding with **Claude**, and setting up local inference for side projects.
 
-If you're bootstrapping your startup, hit me up! I have experience from bootstrapping successful startups and know the ropes. We'll figure out the best choices about tech architecture and infrastructure as well as finding the right people and building sustainable technology.
-
-[Download my CV](https://eralpkaraduman.github.io/cv/)
-
-When I'm not working I'm,
-
-- Live streaming coding as part of our small community of [Unhandled Exception Club](https://unhandledexception.club) at my [Twitch Channel](https://twitch.tv/erikThePlum)
-- Producing a comedy podcast called [Kulak Show](https://open.spotify.com/show/6Ace2VvsbkPKFkgqy4NWUc?si=0097ff13ea40460d)
-
-Best ways to contact me would be;
-
-- **Email:** [eralp@eralpkaraduman.com](mailto:eralp@eralpkaraduman.com)
-- **Bluesky:** [bsky.app/profile/eralpkaraduman.com](https://bsky.app/profile/eralpkaraduman.com)
-- **Mastodon:** [mastodon.social/@eralp](https://mastodon.social/@eralp)
-- **GitHub:** [eralpkaraduman](https://github.com/eralpkaraduman)
-- **LinkedIn:** [eralpkaraduman](https://linkedin.com/in/eralpkaraduman)
-- **Twitter:** [@eralpkaraduman](https://twitter.com/eralpkaraduman)
+If you're bootstrapping your startup, [get in touch](mailto:eralp@eralpkaraduman.com) — I can help figure out tech architecture, infrastructure, and finding the right people.
