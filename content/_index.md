@@ -12,4 +12,6 @@ I have solid infrastructure experience — from self-hosted setups on **Hetzner*
 
 I build side projects ([GitHub](https://github.com/eralpkaraduman)) — from 3D web apps and Chrome extensions to hardware hacks and electronics. I'm also building with **AI tools** — coding with **Claude**, and setting up local inference for side projects.
 
+I've also produced a comedy podcast ([Kulak Show](https://open.spotify.com/show/6Ace2VvsbkPKFkgqy4NWUc?si=0097ff13ea40460d)) and used to live-stream coding on [Twitch](https://twitch.tv/erikThePlum).
+
 If you're bootstrapping your startup, [get in touch](mailto:eralp@eralpkaraduman.com) — I can help figure out tech architecture, infrastructure, and finding the right people.
