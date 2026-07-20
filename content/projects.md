@@ -26,11 +26,11 @@ Live: [textwallpaper.com](https://textwallpaper.com) · Source: [github.com/eral
 
 ## [LinkedFin](https://linkedfin.net)
 
-A multilingual database of fish-name etymologies you can search instantly, running entirely in the browser with no backend.
+A searchable database of where fish names come from, across several languages. It runs entirely in the browser with no backend: the whole dataset is a SQLite file the page loads and searches on the device.
 
 Role: Solo
 
-Tech: React 19, TanStack (Start, Router, Query), TypeScript, SQLite-WASM, Kysely, Fuse.js, Cloudflare Pages, Pages Functions and D1, Vite, Tailwind
+Tech: React, TypeScript, SQLite-WASM, Cloudflare Pages and D1
 
 ![LinkedFin screenshot](/images/projects/linkedfin.png)
 
@@ -38,11 +38,11 @@ Live: [linkedfin.net](https://linkedfin.net) · Source: [github.com/eralpkaradum
 
 ## [Card Quest](https://card-quest.netlify.app)
 
-A single-player card game (Donsol) that runs on iOS, Android, and the web from one React Native codebase.
+A single-player card game (Donsol) that runs on iOS, Android, and the web from one codebase.
 
 Role: Solo
 
-Tech: React Native, react-native-web, TypeScript, Metro and Webpack, styled-components, react-navigation, react-router-dom
+Tech: React Native, react-native-web, TypeScript
 
 ![Card Quest screenshot](/images/projects/card-quest.png)
 
@@ -64,7 +64,7 @@ Live: [robot.eralp.dev](https://robot.eralp.dev)
 
 ## [Rockmorse](https://superdamage.itch.io/rockmorse)
 
-A game where an astronaut stranded on Mars, with only one-way communication to Earth, arranges Martian rocks into Morse code for passing satellites to read his replies. Built for Ludum Dare and open-sourced, inspired by Andy Weir's The Martian. Super Damage Games is my handle for game jams and experimental side projects.
+A game where an astronaut stranded on Mars arranges rocks into Morse code for passing satellites to read. Built for Ludum Dare and open-sourced, inspired by Andy Weir's The Martian. Super Damage Games is my game-jam handle.
 
 Role: Built with artist [erenozel.art](https://erenozel.art)
 
