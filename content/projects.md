@@ -1,14 +1,14 @@
 +++
 title = 'Projects'
 date = 2026-07-20
-description = 'Side projects I build and run on my own, each one live and open source.'
+description = 'Side projects I build and run on my own. All are live, and most are open source.'
 aliases = ['/showcase/']
 [build]
   render = 'always'
   list = 'never'
 +++
 
-A few side projects I built start to finish, most of them on my own. Each one is live and open source.
+A few side projects I built start to finish, most of them on my own. All are live, and most are open source.
 
 ## [Text Wallpaper](https://textwallpaper.com)
 
@@ -64,7 +64,7 @@ Live: [robot.eralp.dev](https://robot.eralp.dev)
 
 ## [Rockmorse](https://superdamage.itch.io/rockmorse)
 
-A game where an astronaut stranded on Mars arranges rocks into Morse code for passing satellites to read. Built for Ludum Dare and open-sourced, inspired by Andy Weir's The Martian. Super Damage Games is my game-jam handle.
+A game where an astronaut stranded on Mars arranges rocks into Morse code for passing satellites to read. Built for Ludum Dare, inspired by Andy Weir's The Martian. Super Damage Games is my game-jam handle.
 
 Role: Built with artist [erenozel.art](https://erenozel.art)
 
