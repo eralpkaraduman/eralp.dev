@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  {{ if .Params.noindex }}<meta name="robots" content="noindex, nofollow">{{ end }}
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="icon" href="/images/favicon.png" type="image/png" sizes="64x64">
   <link rel="stylesheet" href="/css/style.css">
