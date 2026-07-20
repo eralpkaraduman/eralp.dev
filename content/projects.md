@@ -8,7 +8,7 @@ aliases = ['/showcase/']
   list = 'never'
 +++
 
-A few side projects I built on my own, start to finish. Each one is live and open source.
+A few side projects I built start to finish, most of them on my own. Each one is live and open source.
 
 ## [Text Wallpaper](https://textwallpaper.com)
 
@@ -64,9 +64,9 @@ Live: [robot.eralp.dev](https://robot.eralp.dev)
 
 ## [Rockmorse](https://superdamage.itch.io/rockmorse)
 
-An astronaut stranded on Mars, with only one-way communication to Earth, arranges Martian rocks into Morse code for passing satellites to read his replies. Built for Ludum Dare and open-sourced, inspired by Andy Weir's The Martian. Super Damage Games is my handle for game jams and experimental side projects.
+A game where an astronaut stranded on Mars, with only one-way communication to Earth, arranges Martian rocks into Morse code for passing satellites to read his replies. Built for Ludum Dare and open-sourced, inspired by Andy Weir's The Martian. Super Damage Games is my handle for game jams and experimental side projects.
 
-Role: Solo
+Role: Built with artist [erenozel.art](https://erenozel.art)
 
 Tech: game jam project (Ludum Dare)
 
