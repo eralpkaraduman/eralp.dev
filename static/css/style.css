@@ -120,6 +120,13 @@ article img {
   height: auto;
 }
 
+article video,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 h1, h2, h3, h4 {
   color: #D19A66;
   margin-top: 1.5rem;
