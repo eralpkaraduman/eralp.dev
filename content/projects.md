@@ -67,7 +67,9 @@ Role: Solo
 
 Tech: React Native, react-native-web, TypeScript
 
-![Card Quest running on desktop web and Android from one codebase](/images/rnw1/game.png)
+![Card Quest gameplay on desktop web and Android from one codebase](/images/rnw1/game.png)
+
+![Card Quest card gallery: a centered modal on desktop, a bottom sheet on mobile](/images/rnw1/cards.png)
 
 Live: [card-quest.netlify.app](https://card-quest.netlify.app) · Source: [github.com/eralpkaraduman/card-quest](https://github.com/eralpkaraduman/card-quest) · Read the write-up: [React Native mobile and web code sharing](/posts/react-native-mobile-and-web-code-sharing/)
 
