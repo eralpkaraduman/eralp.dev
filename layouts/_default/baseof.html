@@ -43,16 +43,43 @@
     overlay.className = 'lightbox-overlay';
     var big = document.createElement('img');
     big.alt = '';
+    big.style.display = 'none';
+    var vid = document.createElement('video');
+    vid.controls = true;
+    vid.setAttribute('playsinline', '');
+    vid.style.display = 'none';
     overlay.appendChild(big);
+    overlay.appendChild(vid);
     document.body.appendChild(overlay);
-    function close() { overlay.classList.remove('open'); big.removeAttribute('src'); }
-    overlay.addEventListener('click', close);
+    function close() {
+      overlay.classList.remove('open');
+      big.removeAttribute('src'); big.style.display = 'none';
+      vid.pause(); vid.removeAttribute('src'); vid.load(); vid.style.display = 'none';
+    }
+    function openImage(src) {
+      vid.pause(); vid.style.display = 'none';
+      big.src = src; big.style.display = '';
+      overlay.classList.add('open');
+    }
+    function openVideo(src) {
+      big.removeAttribute('src'); big.style.display = 'none';
+      vid.src = src; vid.style.display = '';
+      overlay.classList.add('open');
+      vid.play();
+    }
+    overlay.addEventListener('click', function (e) {
+      if (e.target === vid) return;   // don't close while using the video controls
+      close();
+    });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
-    document.querySelectorAll('article img').forEach(function (img) {
-      img.addEventListener('click', function () {
-        big.src = img.currentSrc || img.src;   // always the full image, not the cropped thumbnail
-        overlay.classList.add('open');
-      });
+    // plain content images (skip the poster images inside video buttons)
+    Array.prototype.forEach.call(document.querySelectorAll('article img'), function (img) {
+      if (img.closest('.gallery-video')) return;
+      img.addEventListener('click', function () { openImage(img.currentSrc || img.src); });
+    });
+    // video items: play in the lightbox
+    Array.prototype.forEach.call(document.querySelectorAll('.gallery-video'), function (item) {
+      item.addEventListener('click', function () { openVideo(item.getAttribute('data-video')); });
     });
   });
   </script>

@@ -145,6 +145,40 @@ video {
   cursor: zoom-in;
 }
 
+/* Video item in a gallery: a poster thumbnail with a play badge. */
+.gallery-video {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 0;
+  border: none;
+  background: none;
+  line-height: 0;
+  cursor: zoom-in;
+}
+
+.play-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+}
+
+.play-badge::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 8px 0 8px 14px;
+  border-color: transparent transparent transparent #fff;
+}
+
 /* Cap standalone (non-gallery) content images so tall portrait shots
    stay reasonable; full image is available via click-to-zoom. */
 article p img {
@@ -178,6 +212,15 @@ article p img {
   margin: auto;
   max-width: 100%;
   height: auto;
+  border-radius: 6px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* A video fits fully within the screen (no scroll), centered. */
+.lightbox-overlay video {
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
   border-radius: 6px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
 }

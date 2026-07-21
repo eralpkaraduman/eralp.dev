@@ -13,15 +13,11 @@ A few side projects I built start to finish, most of them on my own. Most are li
 
 ## [Robot Painter](https://robot.eralp.dev)
 
-A browser tool for designing a skin for a 3D delivery robot. Paint each side in a 2D editor with text, shapes, images, and colors, and watch it wrap onto the rotating model live.
+A browser tool for designing a skin for a 3D delivery robot. Paint each side in a 2D editor with text, shapes, images, and colors, tune the lighting and animations from a live control panel, and watch it wrap onto the rotating model. Click any clip below to play it.
 
 Tech: React, TypeScript, Three.js (react-three-fiber)
 
-{{< video src="/videos/robot-painter.mp4" poster="/images/projects/robotpainter/video-poster.jpg" >}}
-
-Paint any side in the 2D editor and watch it wrap onto the 3D model in real time.
-
-{{< gallery images="/images/projects/robotpainter/texture-editor.png,/images/projects/robotpainter/robot-3d.png,/images/projects/robotpainter/app-screenshot.png" alts="Painting the front face in the 2D editor with a live 3D preview in the corner,The finished skin on the 3D robot with lighting and animation controls,The project list: skins save in the browser and reopen" >}}
+{{< gallery images="/images/projects/robotpainter/app-ubereats.png,/images/projects/robotpainter/skin-skaupat.png,/images/projects/robotpainter/editor-2d.png,/videos/rp-leva-controls.mp4,/videos/rp-base-color-lid.mp4,/videos/rp-robot-animation.mp4,/videos/rp-click-wheels.mp4,/videos/rp-blender.mp4" alts="The full app: a finished skin on the 3D robot with the display controls,A finished skin rendered on the 3D robot,Painting a side in the 2D editor,Wiring the model to a live control panel,Changing the base color and opening the lid from the controls,The finished skin animating on the model,Moving the wheels by clicking them,Animating the model in Blender" >}}
 
 Live: [robot.eralp.dev](https://robot.eralp.dev)
 
@@ -31,13 +27,11 @@ A searchable database of where fish names come from. It is a fully static React 
 
 Tech: React, TypeScript, SQLite-WASM, Cloudflare Pages Functions
 
-Browse a fish across languages, with its size-based name progression:
+Browse a fish across languages, with its size-based name progression.
 
-{{< gallery images="/images/projects/linkedfin/species-octopus.png,/images/projects/linkedfin/species-mostnames-sarda-sarda.png,/images/projects/linkedfin/name-cipura-progression.png,/images/projects/linkedfin/name-lufer-bluefish-progression.png" alts="Octopus species page,A fish shown with its many names,How the name cipura evolved,How the name lufer (bluefish) evolved" >}}
+A static single-page app normally cannot show per-page link previews, since crawlers do not run its JavaScript. So the previews are built at the edge instead: a Cloudflare Pages Function injects each page's Open Graph tags, and a second function generates the preview image itself on the fly, drawing the fish name onto the card as the request comes in. The last image below is one such card, shown on X.
 
-A static single-page app normally cannot show per-page link previews, since crawlers do not run its JavaScript. So the previews are built at the edge instead: a Cloudflare Pages Function injects each page's Open Graph tags, and a second function generates the preview image itself on the fly, drawing the fish name onto the card as the request comes in. Here is one on X:
-
-![A LinkedFin fish preview card as posted on X](/images/projects/linkedfin/og-in-platform-x.png)
+{{< gallery images="/images/projects/linkedfin/species-octopus.png,/images/projects/linkedfin/species-mostnames-sarda-sarda.png,/images/projects/linkedfin/name-cipura-progression.png,/images/projects/linkedfin/name-lufer-bluefish-progression.png,/images/projects/linkedfin/og-in-platform-x.png" alts="Octopus species page,A fish shown with its many names,How the name cipura evolved,How the name lufer (bluefish) evolved,An auto-generated preview card as posted on X" >}}
 
 Live: [linkedfin.net](https://linkedfin.net) · Source: [github.com/eralpkaraduman/LinkedFin](https://github.com/eralpkaraduman/LinkedFin)
 
@@ -61,9 +55,7 @@ A LEGO Retro Radio set turned into a working internet radio. I gutted its fake s
 
 Tech: Rust, Raspberry Pi, embedded Linux
 
-{{< gallery images="/images/projects/legoradio/front.jpg,/images/projects/legoradio/assembly.jpg,/images/projects/legoradio/electronics.jpg" alts="The finished LEGO internet radio,Inside the shell: a Raspberry Pi, audio amp SHIM, and speaker wired in,The electronics on the bench: a Raspberry Pi with an audio amp SHIM driving a speaker" >}}
-
-{{< youtube Mg7KIuxUpBU >}}
+{{< gallery images="/images/projects/legoradio/front.jpg,/images/projects/legoradio/assembly.jpg,/images/projects/legoradio/electronics.jpg,/videos/lego-demo-kitchen.mp4,/videos/lego-demo-tiktok.mp4" alts="The finished LEGO internet radio,Inside the shell: a Raspberry Pi, audio amp SHIM, and speaker wired in,The electronics on the bench: a Raspberry Pi with an audio amp SHIM driving a speaker,The radio playing on a kitchen counter,A short demo of the radio in use" >}}
 
 Source: [github.com/eralpkaraduman/lego-radio](https://github.com/eralpkaraduman/lego-radio)
 

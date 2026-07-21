@@ -1,10 +1,20 @@
-{{- $images := split (.Get "images") "," -}}
+{{- $items := split (.Get "images") "," -}}
 {{- $alts := slice -}}
 {{- with .Get "alts" }}{{ $alts = split . "," }}{{ end -}}
 <div class="gallery">
-{{- range $i, $src := $images }}
+{{- range $i, $src := $items }}
+  {{- $src = trim $src " " -}}
   {{- $alt := "" -}}
-  {{- if gt (len $alts) $i }}{{ $alt = index $alts $i }}{{ end -}}
-  <img src="{{ trim $src " " }}" alt="{{ trim $alt " " }}" loading="lazy">
+  {{- if gt (len $alts) $i }}{{ $alt = trim (index $alts $i) " " }}{{ end -}}
+  {{- $ext := lower (path.Ext $src) -}}
+  {{- if or (eq $ext ".mp4") (eq $ext ".mov") (eq $ext ".webm") -}}
+    {{- $poster := replaceRE `\.[^.]+$` ".jpg" $src -}}
+    <button type="button" class="gallery-video" data-video="{{ $src }}" aria-label="Play video: {{ $alt }}">
+      <img src="{{ $poster }}" alt="{{ $alt }}" loading="lazy">
+      <span class="play-badge" aria-hidden="true"></span>
+    </button>
+  {{- else -}}
+    <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy">
+  {{- end -}}
 {{- end }}
 </div>
