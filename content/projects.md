@@ -33,11 +33,13 @@ Role: Solo
 
 Tech: React, TypeScript, SQLite-WASM, Cloudflare Pages and D1
 
-{{< gallery images="/images/projects/linkedfin/species-rainbowwrasse-coris-julis.png,/images/projects/linkedfin/species-johndory-zeus-faber.png,/images/projects/linkedfin/name-cipura-progression.png,/images/projects/linkedfin/name-lufer-bluefish-progression.png" alts="Rainbow wrasse species page,John Dory species page,How the name cipura evolved,How the name lufer (bluefish) evolved" >}}
+Browse a fish across languages, with its size-based name progression:
 
-Every fish gets its own shareable preview card:
+{{< gallery images="/images/projects/linkedfin/species-octopus.png,/images/projects/linkedfin/species-mostnames-sarda-sarda.png,/images/projects/linkedfin/name-cipura-progression.png,/images/projects/linkedfin/name-lufer-bluefish-progression.png" alts="Octopus species page,A fish shown with its many names,How the name cipura evolved,How the name lufer (bluefish) evolved" >}}
 
-{{< gallery images="/images/projects/linkedfin/og-kefal-x.png,/images/projects/linkedfin/og-mirmir-x.png,/images/projects/linkedfin/og-kirjolohi-x.png,/images/projects/linkedfin/og-vatoz-x.png" alts="Link preview card for kefal,Link preview card for mirmir,Link preview card for kirjolohi,Link preview card for vatoz" >}}
+Sharing a fish auto-generates a preview card, here it is on X:
+
+![A LinkedFin fish preview card as posted on X](/images/projects/linkedfin/og-in-platform-x.png)
 
 Live: [linkedfin.net](https://linkedfin.net) · Source: [github.com/eralpkaraduman/LinkedFin](https://github.com/eralpkaraduman/LinkedFin)
 
@@ -65,11 +67,11 @@ Role: Solo
 
 Tech: Rust, Raspberry Pi, embedded Linux
 
-![The finished LEGO internet radio](/images/projects/legoradio/v1_8s.jpg)
+{{< gallery images="/images/projects/legoradio/hero.jpg,/images/projects/legoradio/knob.jpg,/images/projects/legoradio/guts.jpg" alts="The finished LEGO internet radio,A hand turning the LEGO tuning dial,Inside: a Raspberry Pi, amp, and speaker in the LEGO shell" >}}
 
-![Inside: a Raspberry Pi, amp, and speaker packed into the LEGO shell](/images/projects/legoradio/v2_80s.jpg)
+{{< youtube Mg7KIuxUpBU >}}
 
-Source: [github.com/eralpkaraduman/lego-radio](https://github.com/eralpkaraduman/lego-radio) · Demo: [YouTube](https://www.youtube.com/watch?v=Mg7KIuxUpBU)
+Source: [github.com/eralpkaraduman/lego-radio](https://github.com/eralpkaraduman/lego-radio)
 
 ## [Rockmorse](https://superdamage.itch.io/rockmorse)
 
@@ -79,11 +81,7 @@ Role: Built with artist [erenozel.art](https://erenozel.art)
 
 Tech: game jam project (Ludum Dare)
 
-![Rockmorse in-game screen: an Earth message and the Morse-code rock grid on Mars](/images/projects/rockmorse.png)
-
-![Rockmorse intro comic: stranded on Mars, answering Earth by arranging rocks into Morse code](/images/projects/rockmorse-2.png)
-
-![Rockmorse cutscene: a satellite passing over Mars carrying a new message](/images/projects/rockmorse-3.png)
+{{< gallery images="/images/projects/rockmorse-pushing.jpg,/images/projects/rockmorse.png,/images/projects/rockmorse-2.png,/images/projects/rockmorse-3.png" alts="The astronaut dragging a rock into a Morse row,In-game screen: an Earth message and the Morse-code rock grid,Intro comic: stranded on Mars, answering by Morse code,Cutscene: a satellite passing over Mars" >}}
 
 Play: [superdamage.itch.io/rockmorse](https://superdamage.itch.io/rockmorse) · Source: [github.com/superdamage/LD30](https://github.com/superdamage/LD30)
 
@@ -95,9 +93,7 @@ Role: Solo
 
 Tech: React Native, react-native-web, TypeScript
 
-![Card Quest gameplay on desktop web and Android from one codebase](/images/rnw1/game.png)
-
-![Card Quest card gallery: a centered modal on desktop, a bottom sheet on mobile](/images/rnw1/cards.png)
+{{< gallery images="/images/rnw1/game.png,/images/rnw1/cards.png" alts="Gameplay on desktop web and Android from one codebase,Card gallery: a modal on desktop, a bottom sheet on mobile" >}}
 
 Live: [card-quest.netlify.app](https://card-quest.netlify.app) · Source: [github.com/eralpkaraduman/card-quest](https://github.com/eralpkaraduman/card-quest) · Read the write-up: [React Native mobile and web code sharing](/posts/react-native-mobile-and-web-code-sharing/)
 

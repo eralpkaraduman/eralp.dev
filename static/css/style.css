@@ -127,27 +127,31 @@ video {
   display: block;
 }
 
+/* Horizontal, scrollable strip of uniform thumbnails. */
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 0.5rem;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 8px;
+  padding-bottom: 6px;
   margin-bottom: 1rem;
 }
 
 .gallery img {
-  width: 100%;
-  height: 280px;
+  height: 180px;
+  width: 150px;
   object-fit: cover;
   object-position: top;
-  display: block;
   border-radius: 6px;
+  flex: 0 0 auto;
+  display: block;
   cursor: zoom-in;
 }
 
 /* Cap standalone (non-gallery) content images so tall portrait shots
    stay reasonable; full image is available via click-to-zoom. */
 article p img {
-  max-height: 460px;
+  max-height: 640px;
   width: auto;
   cursor: zoom-in;
 }
