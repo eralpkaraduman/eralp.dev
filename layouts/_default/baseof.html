@@ -37,7 +37,24 @@
       {{ end }}
     </ul>
   </footer>
-  <script src="/js/medium-zoom.min.js"></script>
-  <script>document.addEventListener('DOMContentLoaded',function(){if(window.mediumZoom){mediumZoom('article img');}});</script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    var big = document.createElement('img');
+    big.alt = '';
+    overlay.appendChild(big);
+    document.body.appendChild(overlay);
+    function close() { overlay.classList.remove('open'); big.removeAttribute('src'); }
+    overlay.addEventListener('click', close);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    document.querySelectorAll('article img').forEach(function (img) {
+      img.addEventListener('click', function () {
+        big.src = img.currentSrc || img.src;   // always the full image, not the cropped thumbnail
+        overlay.classList.add('open');
+      });
+    });
+  });
+  </script>
 </body>
 </html>

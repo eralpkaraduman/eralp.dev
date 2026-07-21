@@ -27,15 +27,15 @@ Live: [robot.eralp.dev](https://robot.eralp.dev)
 
 ## [LinkedFin](https://linkedfin.net)
 
-A searchable database of where fish names come from, with no backend: the whole dataset is a SQLite file the browser loads and queries. Sharing a fish still gets a real link preview, a per-name Open Graph card built at the edge.
+A searchable database of where fish names come from. It is a fully static React site on Cloudflare Pages with no backend or API: the entire dataset ships as a single SQLite file that the browser loads and queries in place with SQLite-WASM.
 
-Tech: React, TypeScript, SQLite-WASM, Cloudflare Pages and D1
+Tech: React, TypeScript, SQLite-WASM, Cloudflare Pages Functions
 
 Browse a fish across languages, with its size-based name progression:
 
 {{< gallery images="/images/projects/linkedfin/species-octopus.png,/images/projects/linkedfin/species-mostnames-sarda-sarda.png,/images/projects/linkedfin/name-cipura-progression.png,/images/projects/linkedfin/name-lufer-bluefish-progression.png" alts="Octopus species page,A fish shown with its many names,How the name cipura evolved,How the name lufer (bluefish) evolved" >}}
 
-Sharing a fish auto-generates a preview card, here it is on X:
+A static single-page app normally cannot show per-page link previews, since crawlers do not run its JavaScript. So the previews are built at the edge instead: a Cloudflare Pages Function injects each page's Open Graph tags, and a second function generates the preview image itself on the fly, drawing the fish name onto the card as the request comes in. Here is one on X:
 
 ![A LinkedFin fish preview card as posted on X](/images/projects/linkedfin/og-in-platform-x.png)
 

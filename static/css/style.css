@@ -156,6 +156,35 @@ article p img {
   cursor: zoom-in;
 }
 
+/* Full-screen image lightbox: click any content image to expand it.
+   Backdrop is the site's theme background; the image is shown in full
+   at its natural aspect ratio, scaled to fit the screen. */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5vmin;
+  background: #121212;
+  cursor: zoom-out;
+}
+
+.lightbox-overlay.open {
+  display: flex;
+}
+
+.lightbox-overlay img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
 h1, h2, h3, h4 {
   color: #D19A66;
   margin-top: 1.5rem;
