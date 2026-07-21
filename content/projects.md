@@ -15,8 +15,6 @@ A few side projects I built start to finish, most of them on my own. Most are li
 
 A browser tool for designing a skin for a 3D delivery robot. Paint each side in a 2D editor with text, shapes, images, and colors, and watch it wrap onto the rotating model live.
 
-Role: Solo
-
 Tech: React, TypeScript, Three.js (react-three-fiber)
 
 {{< video src="/videos/robot-painter.mp4" poster="/images/projects/robotpainter/video-poster.jpg" >}}
@@ -30,8 +28,6 @@ Live: [robot.eralp.dev](https://robot.eralp.dev)
 ## [LinkedFin](https://linkedfin.net)
 
 A searchable database of where fish names come from, with no backend: the whole dataset is a SQLite file the browser loads and queries. Sharing a fish still gets a real link preview, a per-name Open Graph card built at the edge.
-
-Role: Solo
 
 Tech: React, TypeScript, SQLite-WASM, Cloudflare Pages and D1
 
@@ -49,8 +45,6 @@ Live: [linkedfin.net](https://linkedfin.net) · Source: [github.com/eralpkaradum
 
 Turns any text into a simple phone wallpaper, right in the browser.
 
-Role: Solo
-
 Tech: JavaScript SPA, iOS (Cordova/WebView), AdMob
 
 Around 3,000 monthly active users.
@@ -65,8 +59,6 @@ Live: [textwallpaper.com](https://textwallpaper.com) · Source: [github.com/eral
 
 A LEGO Retro Radio set turned into a working internet radio. I gutted its fake sound brick and fit a Raspberry Pi, amp, and speaker inside, running radio software I wrote in Rust; a button behind the dial browses free web-radio stations and announces them with on-device text-to-speech.
 
-Role: Solo
-
 Tech: Rust, Raspberry Pi, embedded Linux
 
 {{< gallery images="/images/projects/legoradio/hero.jpg,/images/projects/legoradio/knob.jpg,/images/projects/legoradio/guts.jpg" alts="The finished LEGO internet radio,A hand turning the LEGO tuning dial,Inside: a Raspberry Pi, amp, and speaker in the LEGO shell" >}}
@@ -79,7 +71,7 @@ Source: [github.com/eralpkaraduman/lego-radio](https://github.com/eralpkaraduman
 
 A game where an astronaut stranded on Mars arranges rocks into Morse code for passing satellites to read. Built for Ludum Dare, inspired by Andy Weir's The Martian.
 
-Role: Built with artist [erenozel.art](https://erenozel.art)
+Built with artist [erenozel.art](https://erenozel.art)
 
 Tech: game jam project (Ludum Dare)
 
@@ -90,8 +82,6 @@ Play: [superdamage.itch.io/rockmorse](https://superdamage.itch.io/rockmorse) · 
 ## [Card Quest](https://card-quest.netlify.app)
 
 A cross-platform single-player card game (Donsol) that runs on iOS, Android, and the web from a single codebase.
-
-Role: Solo
 
 Tech: React Native, react-native-web, TypeScript
 
