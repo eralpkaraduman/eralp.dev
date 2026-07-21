@@ -17,11 +17,7 @@ A web app for painting a 3D delivery robot.
 
 Role: Solo
 
-<!-- Placeholder slot: Robot Painter demo. The mp4 at static/videos/robot-painter.mp4 is a neutral placeholder clip, not real footage. Swap in the real recording and poster when ready. -->
-<video controls playsinline webkit-playsinline preload="metadata" poster="/images/projects/robot-painter-poster.png">
-  <source src="/videos/robot-painter.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+{{< video src="/videos/robot-painter.mp4" poster="/images/projects/robot-painter-poster.png" >}}
 
 Live: [robot.eralp.dev](https://robot.eralp.dev)
 
