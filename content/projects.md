@@ -19,9 +19,11 @@ Role: Solo
 
 Tech: React, TypeScript, Three.js (react-three-fiber)
 
-{{< video src="/videos/robot-painter.mp4" poster="/images/projects/robot-painter-poster.png" >}}
+{{< video src="/videos/robot-painter.mp4" poster="/images/projects/robotpainter/video-poster.jpg" >}}
 
-![The Robot Painter home screen with recent skin projects](/images/projects/robotpainter/app-screenshot.png)
+Paint any side in the 2D editor and watch it wrap onto the 3D model in real time.
+
+{{< gallery images="/images/projects/robotpainter/texture-editor.png,/images/projects/robotpainter/robot-3d.png,/images/projects/robotpainter/app-screenshot.png" alts="Painting the front face in the 2D editor with a live 3D preview in the corner,The finished skin on the 3D robot with lighting and animation controls,The project list: skins save in the browser and reopen" >}}
 
 Live: [robot.eralp.dev](https://robot.eralp.dev)
 
