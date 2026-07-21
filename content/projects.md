@@ -61,7 +61,7 @@ Play: [superdamage.itch.io/rockmorse](https://superdamage.itch.io/rockmorse) · 
 
 ## [Card Quest](https://card-quest.netlify.app)
 
-A single-player card game (Donsol) that runs on iOS, Android, and the web from one codebase.
+A cross-platform single-player card game (Donsol) that runs on iOS, Android, and the web from a single codebase.
 
 Role: Solo
 
