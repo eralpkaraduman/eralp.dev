@@ -53,7 +53,7 @@ A LEGO Retro Radio set turned into a working internet radio. I gutted its fake s
 
 Tech: Rust, Raspberry Pi, embedded Linux
 
-{{< gallery images="/images/projects/legoradio/front.jpg,/images/projects/legoradio/assembly.jpg,/images/projects/legoradio/electronics.jpg,/videos/lego-demo-kitchen.mp4,/videos/lego-demo-tiktok.mp4" alts="The finished LEGO internet radio,Inside the shell: a Raspberry Pi, audio amp SHIM, and speaker wired in,The electronics on the bench: a Raspberry Pi with an audio amp SHIM driving a speaker,The radio playing on a kitchen counter,A short demo of the radio in use" >}}
+{{< gallery images="/images/projects/legoradio/front.jpg,/images/projects/legoradio/assembly.jpg,/images/projects/legoradio/electronics.jpg,/videos/lego-radio-demo.mp4,/videos/lego-button-test.mp4,/videos/lego-demo-tiktok.mp4" alts="The finished LEGO internet radio,Inside the shell: a Raspberry Pi, audio amp SHIM, and speaker wired in,The electronics on the bench: a Raspberry Pi with an audio amp SHIM driving a speaker,The finished radio playing internet stations,Testing the hardware button that changes stations,A short demo of the radio in use" >}}
 
 Source: [github.com/eralpkaraduman/lego-radio](https://github.com/eralpkaraduman/lego-radio)
 
