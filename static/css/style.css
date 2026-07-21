@@ -136,7 +136,7 @@ video {
 
 .gallery img {
   width: 100%;
-  height: 320px;
+  height: 280px;
   object-fit: cover;
   object-position: top;
   display: block;
@@ -147,7 +147,7 @@ video {
 /* Cap standalone (non-gallery) content images so tall portrait shots
    stay reasonable; full image is available via click-to-zoom. */
 article p img {
-  max-height: 520px;
+  max-height: 460px;
   width: auto;
   cursor: zoom-in;
 }
