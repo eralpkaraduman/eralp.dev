@@ -127,13 +127,12 @@ video {
   display: block;
 }
 
-/* Horizontal, scrollable strip of uniform thumbnails. */
+/* Wrapping row of thumbnails: images flow onto the next line instead of
+   hiding behind a horizontal scroll. */
 .gallery {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  flex-wrap: wrap;
   gap: 8px;
-  padding-bottom: 6px;
   margin-bottom: 1rem;
 }
 

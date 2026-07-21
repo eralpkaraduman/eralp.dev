@@ -43,7 +43,7 @@ Live: [linkedfin.net](https://linkedfin.net) · Source: [github.com/eralpkaradum
 
 ## [Text Wallpaper](https://textwallpaper.com)
 
-Turns any text into a simple phone wallpaper, right in the browser.
+Turns any text into a simple wallpaper, right in the browser, on desktop and mobile. Pick the colors and size, then save the image. There is a native iOS app too.
 
 Tech: JavaScript SPA, iOS (Cordova/WebView), AdMob
 
@@ -51,9 +51,7 @@ Around 3,000 monthly active users.
 
 ![The Text Wallpaper editor in action](/images/projects/textwallpaper/intro.gif)
 
-![A yellow-on-black text wallpaper on a phone](/images/projects/textwallpaper/mobile-04-yellow-on-black.png)
-
-{{< gallery images="/images/projects/textwallpaper/flow-01-intro.png,/images/projects/textwallpaper/flow-03-text-entered.png,/images/projects/textwallpaper/flow-04-background-color-picker.png,/images/projects/textwallpaper/flow-08-text-size-control.png,/images/projects/textwallpaper/flow-13-download-popup.png" alts="Open the editor,Type any text,Pick a background color,Adjust text size,Save the wallpaper" >}}
+{{< gallery images="/images/projects/textwallpaper/m-yellow-black.png,/images/projects/textwallpaper/m-red.png,/images/projects/textwallpaper/m-navy-light.png,/images/projects/textwallpaper/m-white-gray.png" alts="A text wallpaper on a phone, yellow on black,A text wallpaper on a phone, dark gray on red,A text wallpaper on a phone, navy on off-white,The editor on a phone, white on dark gray" >}}
 
 Live: [textwallpaper.com](https://textwallpaper.com) · Source: [github.com/eralpkaraduman/text-wallpaper-generator](https://github.com/eralpkaraduman/text-wallpaper-generator)
 
@@ -63,7 +61,7 @@ A LEGO Retro Radio set turned into a working internet radio. I gutted its fake s
 
 Tech: Rust, Raspberry Pi, embedded Linux
 
-{{< gallery images="/images/projects/legoradio/hero.jpg,/images/projects/legoradio/knob.jpg,/images/projects/legoradio/guts.jpg" alts="The finished LEGO internet radio,A hand turning the LEGO tuning dial,Inside: a Raspberry Pi, amp, and speaker in the LEGO shell" >}}
+{{< gallery images="/images/projects/legoradio/front.jpg,/images/projects/legoradio/assembly.jpg,/images/projects/legoradio/electronics.jpg" alts="The finished LEGO internet radio,Inside the shell: a Raspberry Pi, audio amp SHIM, and speaker wired in,The electronics on the bench: a Raspberry Pi with an audio amp SHIM driving a speaker" >}}
 
 {{< youtube Mg7KIuxUpBU >}}
 
