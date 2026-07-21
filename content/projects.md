@@ -17,7 +17,7 @@ A browser tool for designing a skin for a 3D delivery robot. Paint each side in 
 
 Tech: React, TypeScript, Three.js (react-three-fiber)
 
-{{< gallery images="/images/projects/robotpainter/app-ubereats.png,/images/projects/robotpainter/skin-skaupat.png,/images/projects/robotpainter/editor-2d.png,/videos/rp-leva-controls.mp4,/videos/rp-base-color-lid.mp4,/videos/rp-robot-animation.mp4,/videos/rp-click-wheels.mp4,/videos/rp-blender.mp4" alts="The full app: a finished skin on the 3D robot with the display controls,A finished skin rendered on the 3D robot,Painting a side in the 2D editor,Wiring the model to a live control panel,Changing the base color and opening the lid from the controls,The finished skin animating on the model,Moving the wheels by clicking them,Animating the model in Blender" >}}
+{{< gallery images="/images/projects/robotpainter/skin-skaupat.png,/images/projects/robotpainter/skin-foodora.png,/images/projects/robotpainter/editor-foodora.png,/videos/rp-leva-controls.mp4,/videos/rp-base-color-lid.mp4,/videos/rp-robot-animation.mp4,/videos/rp-click-wheels.mp4,/videos/rp-blender.mp4" alts="A finished skin rendered on the 3D robot,A foodora skin rendered on the 3D robot,Editing a side in the 2D editor with the text and color controls,Wiring the model to a live control panel,Changing the base color and opening the lid from the controls,The finished skin animating on the model,Moving the wheels by clicking them,Animating the model in Blender" >}}
 
 Live: [robot.eralp.dev](https://robot.eralp.dev)
 
@@ -31,7 +31,7 @@ Browse a fish across languages, with its size-based name progression.
 
 A static single-page app normally cannot show per-page link previews, since crawlers do not run its JavaScript. So the previews are built at the edge instead: a Cloudflare Pages Function injects each page's Open Graph tags, and a second function generates the preview image itself on the fly, drawing the fish name onto the card as the request comes in. The last image below is one such card, shown on X.
 
-{{< gallery images="/images/projects/linkedfin/species-octopus.png,/images/projects/linkedfin/species-mostnames-sarda-sarda.png,/images/projects/linkedfin/name-cipura-progression.png,/images/projects/linkedfin/name-lufer-bluefish-progression.png,/images/projects/linkedfin/og-in-platform-x.png" alts="Octopus species page,A fish shown with its many names,How the name cipura evolved,How the name lufer (bluefish) evolved,An auto-generated preview card as posted on X" >}}
+{{< gallery images="/images/projects/linkedfin/search-overview.png,/images/projects/linkedfin/species-octopus.png,/images/projects/linkedfin/species-gilthead-sparus-aurata.png,/images/projects/linkedfin/name-cipura-progression.png,/images/projects/linkedfin/name-lufer-bluefish-progression.png,/images/projects/linkedfin/og-in-platform-x.png" alts="The searchable table of fish names by language region and species,Octopus species page,The gilthead seabream with its ten regional names,How the name cipura evolved,How the name lufer (bluefish) evolved,An auto-generated preview card as posted on X" >}}
 
 Live: [linkedfin.net](https://linkedfin.net) · Source: [github.com/eralpkaraduman/LinkedFin](https://github.com/eralpkaraduman/LinkedFin)
 
@@ -63,7 +63,7 @@ A game where an astronaut stranded on Mars arranges rocks into Morse code for pa
 
 Built with artist [erenozel.art](https://erenozel.art)
 
-Tech: game jam project (Ludum Dare)
+Tech: Unity
 
 {{< gallery images="/images/projects/rockmorse-pushing.jpg,/images/projects/rockmorse.png,/images/projects/rockmorse-2.png,/images/projects/rockmorse-3.png" alts="The astronaut dragging a rock into a Morse row,In-game screen: an Earth message and the Morse-code rock grid,Intro comic: stranded on Mars, answering by Morse code,Cutscene: a satellite passing over Mars" >}}
 
