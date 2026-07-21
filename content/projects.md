@@ -49,6 +49,8 @@ Tech: JavaScript SPA, iOS (Cordova/WebView), AdMob
 
 Around 3,000 monthly active users.
 
+![The Text Wallpaper editor in action](/images/projects/textwallpaper/intro.gif)
+
 ![A yellow-on-black text wallpaper on a phone](/images/projects/textwallpaper/mobile-04-yellow-on-black.png)
 
 {{< gallery images="/images/projects/textwallpaper/flow-01-intro.png,/images/projects/textwallpaper/flow-03-text-entered.png,/images/projects/textwallpaper/flow-04-background-color-picker.png,/images/projects/textwallpaper/flow-08-text-size-control.png,/images/projects/textwallpaper/flow-13-download-popup.png" alts="Open the editor,Type any text,Pick a background color,Adjust text size,Save the wallpaper" >}}

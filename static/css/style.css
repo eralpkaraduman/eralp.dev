@@ -139,9 +139,7 @@ video {
 
 .gallery img {
   height: 180px;
-  width: 150px;
-  object-fit: cover;
-  object-position: top;
+  width: auto;
   border-radius: 6px;
   flex: 0 0 auto;
   display: block;
@@ -164,9 +162,9 @@ article p img {
   inset: 0;
   z-index: 1000;
   display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 2.5vmin;
+  overflow: auto;
+  padding: 4vmin;
+  box-sizing: border-box;
   background: #121212;
   cursor: zoom-out;
 }
@@ -175,12 +173,12 @@ article p img {
   display: flex;
 }
 
+/* Image is centered when it fits; a tall image fills the width and the
+   overlay scrolls vertically, keeping the 4vmin margin around it. */
 .lightbox-overlay img {
+  margin: auto;
   max-width: 100%;
-  max-height: 100%;
-  width: auto;
   height: auto;
-  object-fit: contain;
   border-radius: 6px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
 }
