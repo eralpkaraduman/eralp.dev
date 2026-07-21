@@ -1,4 +1,4 @@
-<video controls playsinline webkit-playsinline preload="metadata"{{ with .Get "poster" }} poster="{{ . }}"{{ end }}>
+<video preload="none" playsinline webkit-playsinline poster="{{ .Get "poster" }}" onclick="this.controls=true; this.play()" style="cursor:pointer">
   <source src="{{ .Get "src" }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
