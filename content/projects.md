@@ -21,6 +21,8 @@ Tech: React, TypeScript, Three.js (react-three-fiber)
 
 {{< video src="/videos/robot-painter.mp4" poster="/images/projects/robot-painter-poster.png" >}}
 
+![The Robot Painter home screen with recent skin projects](/images/projects/robotpainter/app-screenshot.png)
+
 Live: [robot.eralp.dev](https://robot.eralp.dev)
 
 ## [LinkedFin](https://linkedfin.net)
