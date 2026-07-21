@@ -43,7 +43,7 @@ Tech: JavaScript SPA, iOS (Cordova/WebView), AdMob
 
 Around 3,000 monthly active users.
 
-{{< gallery images="/images/projects/textwallpaper/intro.gif,/images/projects/textwallpaper/m-colorpicker.png,/images/projects/textwallpaper/m-blue-wifi.png,/images/projects/textwallpaper/m-download.png,/images/projects/textwallpaper/m-yellow-black.png,/images/projects/textwallpaper/m-navy-light.png" alts="The editor in action,Picking a background color from the palette,Guest WiFi details saved as a wallpaper,The save dialog with the finished wallpaper,A laptop asset tag, yellow on black,A laptop asset tag, navy on off-white" >}}
+{{< gallery images="/images/projects/textwallpaper/intro.gif,/images/projects/textwallpaper/m-colorpicker.png,/images/projects/textwallpaper/m-todo.png,/images/projects/textwallpaper/m-download.png,/images/projects/textwallpaper/m-yellow-black.png,/images/projects/textwallpaper/m-navy-light.png" alts="The editor in action,Picking a background color from the palette,A to-do list saved as a wallpaper,The save dialog with the finished wallpaper,A laptop asset tag, yellow on black,A laptop asset tag, navy on off-white" >}}
 
 Live: [textwallpaper.com](https://textwallpaper.com) · Source: [github.com/eralpkaraduman/text-wallpaper-generator](https://github.com/eralpkaraduman/text-wallpaper-generator)
 

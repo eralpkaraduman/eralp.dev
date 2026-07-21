@@ -48,8 +48,13 @@
     vid.controls = true;
     vid.setAttribute('playsinline', '');
     vid.style.display = 'none';
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'lightbox-close';
+    closeBtn.setAttribute('aria-label', 'Close');
+    closeBtn.innerHTML = '×';
     overlay.appendChild(big);
     overlay.appendChild(vid);
+    overlay.appendChild(closeBtn);
     document.body.appendChild(overlay);
     function close() {
       overlay.classList.remove('open');
@@ -67,6 +72,7 @@
       overlay.classList.add('open');
       vid.play();
     }
+    closeBtn.addEventListener('click', function (e) { e.stopPropagation(); close(); });
     overlay.addEventListener('click', function (e) {
       if (e.target === vid) return;   // don't close while using the video controls
       close();
