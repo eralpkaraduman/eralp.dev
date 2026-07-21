@@ -1,0 +1,10 @@
+{{- $images := split (.Get "images") "," -}}
+{{- $alts := slice -}}
+{{- with .Get "alts" }}{{ $alts = split . "," }}{{ end -}}
+<div class="gallery">
+{{- range $i, $src := $images }}
+  {{- $alt := "" -}}
+  {{- if gt (len $alts) $i }}{{ $alt = index $alts $i }}{{ end -}}
+  <img src="{{ trim $src " " }}" alt="{{ trim $alt " " }}" loading="lazy">
+{{- end }}
+</div>

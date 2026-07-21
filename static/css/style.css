@@ -127,6 +127,21 @@ video {
   display: block;
 }
 
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  cursor: zoom-in;
+}
+
 h1, h2, h3, h4 {
   color: #D19A66;
   margin-top: 1.5rem;
