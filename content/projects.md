@@ -55,7 +55,11 @@ Role: Built with artist [erenozel.art](https://erenozel.art)
 
 Tech: game jam project (Ludum Dare)
 
-![Rockmorse screenshot](/images/projects/rockmorse.png)
+![Rockmorse in-game screen: an Earth message and the Morse-code rock grid on Mars](/images/projects/rockmorse.png)
+
+![Rockmorse intro comic: stranded on Mars, answering Earth by arranging rocks into Morse code](/images/projects/rockmorse-2.png)
+
+![Rockmorse cutscene: a satellite passing over Mars carrying a new message](/images/projects/rockmorse-3.png)
 
 Play: [superdamage.itch.io/rockmorse](https://superdamage.itch.io/rockmorse) · Source: [github.com/superdamage/LD30](https://github.com/superdamage/LD30)
 
