@@ -3,10 +3,6 @@ title = 'Projects'
 date = 2026-07-20
 description = 'Side projects I build and run on my own. Most are live, and most are open source.'
 aliases = ['/showcase/']
-noindex = true
-[build]
-  render = 'always'
-  list = 'never'
 +++
 
 A few side projects I built start to finish, most of them on my own. Most are live, and most are open source.
