@@ -77,4 +77,4 @@ Live: [card-quest.netlify.app](https://card-quest.netlify.app) · Source: [githu
 
 ---
 
-More about me: [CV](https://eralpkaraduman.github.io/cv/) · [GitHub](https://github.com/eralpkaraduman)
+More about me: [Home](/) · [CV](https://eralpkaraduman.github.io/cv/) · [GitHub](https://github.com/eralpkaraduman)
