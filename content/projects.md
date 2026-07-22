@@ -67,7 +67,9 @@ Play: [superdamage.itch.io/rockmorse](https://superdamage.itch.io/rockmorse) · 
 
 ## [Card Quest](https://card-quest.netlify.app)
 
-A cross-platform single-player card game (Donsol) that runs on iOS, Android, and the web from a single codebase.
+An experiment in sharing code between a React Native mobile app and a React website. The card game it ships with (Donsol, a single-player solitaire) is just the vehicle; the real subject is how much can be shared across mobile and web with react-native-web.
+
+The aim was to avoid the write-once-look-the-same trap of Expo or Flutter: the game logic, page content, UI components, and styling are all shared, while each platform keeps its own feel, a responsive sidebar on the web and a bottom tab bar on mobile. The platform-specific parts, mainly routing (react-router on web, react-navigation on native) and link handling, live in `.web` and `.native` files; anything shared stays un-suffixed. On the web, a webpack build that aliases react-native to react-native-web runs alongside React Native's own Metro bundler.
 
 Tech: React Native, react-native-web, TypeScript
 
