@@ -13,9 +13,9 @@ A few side projects I built start to finish, most of them on my own. Most are li
 
 ## [Robot Painter](https://robot.eralp.dev)
 
-A browser tool for designing a skin for a 3D delivery robot. Paint each side in a 2D editor with text, shapes, images, and colors, tune the lighting and animations from a live control panel, and watch it wrap onto the rotating model. Click any clip below to play it.
+A browser tool for designing a skin for a 3D delivery robot. Paint each side in a 2D editor with text, shapes, images, and colors, tune the lighting and animations from a live control panel, and watch it wrap onto the rotating model.
 
-Tech: React, TypeScript, Three.js (react-three-fiber)
+Tech: React, TypeScript, Three.js (react-three-fiber), blender
 
 {{< gallery images="/images/projects/robotpainter/skin-skaupat.png,/images/projects/robotpainter/skin-foodora.png,/images/projects/robotpainter/editor-foodora.png,/videos/rp-leva-controls.mp4,/videos/rp-base-color-lid.mp4,/videos/rp-robot-animation.mp4,/videos/rp-click-wheels.mp4,/videos/rp-blender.mp4" alts="A finished skin rendered on the 3D robot,A foodora skin rendered on the 3D robot,Editing a side in the 2D editor with the text and color controls,Wiring the model to a live control panel,Changing the base color and opening the lid from the controls,The finished skin animating on the model,Moving the wheels by clicking them,Animating the model in Blender" >}}
 
@@ -23,7 +23,7 @@ Live: [robot.eralp.dev](https://robot.eralp.dev)
 
 ## [LinkedFin](https://linkedfin.net)
 
-A searchable database of where fish names come from. It is a fully static React site on Cloudflare Pages with no backend or API: the entire dataset ships as a single SQLite file that the browser loads and queries in place with SQLite-WASM.
+A searchable entymology database of where fish names come from. It is a fully static React site on Cloudflare Pages with no backend or API: the entire dataset ships as a single SQLite file that the browser loads and queries in place with SQLite-WASM.
 
 Tech: React, TypeScript, SQLite-WASM, Cloudflare Pages Functions
 
@@ -37,7 +37,7 @@ Live: [linkedfin.net](https://linkedfin.net) · Source: [github.com/eralpkaradum
 
 ## [Text Wallpaper](https://textwallpaper.com)
 
-Turns any text into a simple wallpaper, right in the browser, on desktop and mobile. Pick the colors and size, then save the image. There is a native iOS app too.
+Turns any text into a simple wallpaper, right in the browser, on desktop and mobile. Pick the colors and size, then save the image.
 
 Tech: JavaScript SPA, iOS (Cordova/WebView), AdMob
 
